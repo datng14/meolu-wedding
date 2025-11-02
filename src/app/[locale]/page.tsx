@@ -1,0 +1,31 @@
+import Calendar from '@/components/Calendar';
+import Countdown from '@/components/Countdown';
+import CoupleInfo from '@/components/CoupleInfo';
+import Gallery from '@/components/Gallery';
+import Guestbook from '@/components/Guestbook';
+import Hero from '@/components/Hero';
+import Invitation from '@/components/Invitation';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
+import Location from '@/components/Location';
+import MobileInvitationPopup from '@/components/MobileInvitationPopup';
+import RSVP from '@/components/RSVP';
+import Timeline from '@/components/Timeline';
+
+export default function Home() {
+  return (
+    <main className='min-h-screen'>
+      <MobileInvitationPopup />
+      <LanguageSwitcher />
+      <Hero />
+      <CoupleInfo />
+      <Invitation />
+      <Location />
+      <Calendar />
+      <Countdown />
+      <Timeline />
+      <Gallery />
+      <RSVP />
+      <Guestbook />
+    </main>
+  );
+}

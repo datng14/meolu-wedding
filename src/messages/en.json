@@ -1,0 +1,124 @@
+{
+  "common": {
+    "language": "Language",
+    "vietnamese": "V",
+    "english": "E",
+    "readMore": "Read more",
+    "send": "Send",
+    "submit": "Submit",
+    "loading": "Loading...",
+    "success": "Success",
+    "error": "An error occurred",
+    "required": "This field is required"
+  },
+  "hero": {
+    "saveOurDate": "Save our date",
+    "coupleNames": "Tuan Dat & Anh Thao",
+    "date": "24.01.2026",
+    "time": "18:00"
+  },
+  "quote": {
+    "title": "WHEN TWO HEARTS BEAT AS ONE",
+    "subtitle": "They create a soul strong enough to last forever"
+  },
+  "invitation": {
+    "title": "We cordially invite you",
+    "subtitle": "to attend our wedding party",
+    "time": "At",
+    "lunarDate": "(Lunar calendar: December 26th, Year of the Snake)",
+    "venue": "PAVILLON TAN SON NHAT",
+    "address": "202 Hoang Van Thu St, Ward 9, Phu Nhuan, HCMC, Vietnam",
+    "directions": "GET DIRECTIONS",
+    "groomFamily": "GROOM'S FAMILY",
+    "brideFamily": "BRIDE'S FAMILY",
+    "groomFatherName": "Mr. Ngo Van Tien",
+    "groomMotherName": "Mrs. Pham Thi Thu Thuy",
+    "groomCity": "TP. HCM",
+    "brideFatherName": "Mr. Pham Tien Hung",
+    "brideMotherName": "Mrs. Nguyen Thi Thang",
+    "brideCity": "TP. HCM",
+    "invitationText": "We cordially invite you",
+    "celebrationText": "to attend our wedding celebration",
+    "groomName": "Tuan Dat & Anh Thao",
+    "brideName": "",
+    "dayOfWeek": "SATURDAY",
+    "location": "Venue",
+    "addToCalendar": "Add to Calendar"
+  },
+  "couple": {
+    "title": "Bride & Groom",
+    "bride": "Bride",
+    "groom": "Groom",
+    "brideName": "Anh Thao",
+    "groomName": "Tuan Dat",
+    "name": "Name",
+    "description": "Description"
+  },
+  "countdown": {
+    "title": "Countdown to the wedding",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds"
+  },
+  "timeline": {
+    "title": "Timeline",
+    "ceremony": "Ceremony",
+    "reception": "Reception",
+    "event1Time": "17:30",
+    "event1Title": "Ice cream & photobooth",
+    "event2Time": "18:00",
+    "event2Title": "Guest reception",
+    "event3Time": "19:00",
+    "event3Title": "Wedding ceremony begins",
+    "event4Time": "19:30",
+    "event4Title": "Reception celebration"
+  },
+  "gallery": {
+    "title": "Beautiful moments",
+    "viewAll": "View all"
+  },
+  "location": {
+    "title": "Location",
+    "ceremony": "Ceremony",
+    "reception": "Reception",
+    "address": "Address",
+    "map": "Map",
+    "getDirections": "Get directions"
+  },
+  "rsvp": {
+    "title": "RSVP",
+    "subtitle": "Please let us know if you can attend",
+    "name": "Full name",
+    "email": "Email",
+    "phone": "Phone number",
+    "attending": "Will you be attending?",
+    "yes": "Yes, I will attend",
+    "no": "No, I'm sorry I can't attend",
+    "guests": "Number of guests",
+    "message": "Message",
+    "messagePlaceholder": "Enter your message...",
+    "submit": "Submit RSVP",
+    "thankYou": "Thank you for your RSVP!",
+    "error": "An error occurred. Please try again."
+  },
+  "guestbook": {
+    "title": "Guestbook",
+    "subtitle": "Send your wishes to the bride and groom",
+    "name": "Your name",
+    "message": "Message",
+    "messagePlaceholder": "Write your message...",
+    "submit": "Send message",
+    "thankYou": "Thank you for your message!",
+    "error": "An error occurred. Please try again.",
+    "noMessages": "No messages yet. Be the first!"
+  },
+  "popup": {
+    "theWeddingOf": "The Wedding Of",
+    "coupleNames": "Tuan Dat & Anh Thao",
+    "date": "24.01.2026",
+    "inviteTo": "INVITE TO",
+    "guestName": "Anh Success",
+    "viewInvitation": "VIEW INVITATION"
+  }
+}

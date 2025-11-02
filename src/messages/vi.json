@@ -1,0 +1,124 @@
+{
+  "common": {
+    "language": "Ngôn ngữ",
+    "vietnamese": "V",
+    "english": "E",
+    "readMore": "Đọc thêm",
+    "send": "Gửi",
+    "submit": "Gửi đi",
+    "loading": "Đang tải...",
+    "success": "Thành công",
+    "error": "Có lỗi xảy ra",
+    "required": "Trường này là bắt buộc"
+  },
+  "hero": {
+    "saveOurDate": "Save our date",
+    "coupleNames": "Tuan Dat & Anh Thao",
+    "date": "24.01.2026",
+    "time": "18:00"
+  },
+  "quote": {
+    "title": "WHEN TWO HEARTS BEAT AS ONE",
+    "subtitle": "They create a soul strong enough to last forever"
+  },
+  "invitation": {
+    "title": "Kính mời tham dự",
+    "subtitle": "Tiệc cưới của chúng tôi",
+    "time": "Vào lúc",
+    "lunarDate": "(Tức ngày 26 tháng 12 năm Ất Tỵ)",
+    "venue": "PAVILLON TÂN SƠN NHẤT",
+    "address": "202 Đ. Hoàng Văn Thụ, Phường 9, Phú Nhuận, TP. HCM, Việt Nam",
+    "directions": "CHỈ ĐƯỜNG",
+    "groomFamily": "NHÀ TRAI",
+    "brideFamily": "NHÀ GÁI",
+    "groomFatherName": "Ông. Ngô Văn Tiến",
+    "groomMotherName": "Bà. Phạm Thị Thu Thúy",
+    "groomCity": "TP. HCM",
+    "brideFatherName": "Ông. Phạm Tiến Hưng",
+    "brideMotherName": "Bà. Nguyễn Thị Thắng",
+    "brideCity": "TP. HCM",
+    "invitationText": "Kính mời tham dự",
+    "celebrationText": "Tiệc thân mật của chúng tôi",
+    "groomName": "Tuan Dat & Anh Thao",
+    "brideName": "",
+    "dayOfWeek": "THỨ BẢY",
+    "location": "Địa điểm",
+    "addToCalendar": "Thêm vào lịch"
+  },
+  "couple": {
+    "title": "Cô dâu & Chú rể",
+    "bride": "Cô dâu",
+    "groom": "Chú rể",
+    "brideName": "Ánh Thảo",
+    "groomName": "Tuấn Đạt",
+    "name": "Tên",
+    "description": "Mô tả"
+  },
+  "countdown": {
+    "title": "Đếm ngược đến ngày cưới",
+    "days": "Ngày",
+    "hours": "Giờ",
+    "minutes": "Phút",
+    "seconds": "Giây"
+  },
+  "timeline": {
+    "title": "Lịch trình",
+    "ceremony": "Lễ cưới",
+    "reception": "Tiệc cưới",
+    "event1Time": "17:30",
+    "event1Title": "Ăn kem, chụp ảnh với photobooth",
+    "event2Time": "18:00",
+    "event2Title": "Tiếp đón khách mời",
+    "event3Time": "19:00",
+    "event3Title": "Bắt đầu lễ thành hôn",
+    "event4Time": "19:30",
+    "event4Title": "Khai tiệc chúc mừng"
+  },
+  "gallery": {
+    "title": "Khoảnh khắc đẹp",
+    "viewAll": "Xem tất cả"
+  },
+  "location": {
+    "title": "Địa điểm",
+    "ceremony": "Lễ cưới",
+    "reception": "Tiệc cưới",
+    "address": "Địa chỉ",
+    "map": "Bản đồ",
+    "getDirections": "Chỉ đường"
+  },
+  "rsvp": {
+    "title": "Xác nhận tham dự",
+    "subtitle": "Vui lòng cho chúng tôi biết bạn có thể tham dự",
+    "name": "Họ và tên",
+    "email": "Email",
+    "phone": "Số điện thoại",
+    "attending": "Bạn có tham dự không?",
+    "yes": "Có, tôi sẽ tham dự",
+    "no": "Không, tôi rất tiếc không thể tham dự",
+    "guests": "Số lượng khách",
+    "message": "Lời nhắn",
+    "messagePlaceholder": "Nhập lời nhắn của bạn...",
+    "submit": "Gửi xác nhận",
+    "thankYou": "Cảm ơn bạn đã xác nhận!",
+    "error": "Đã xảy ra lỗi. Vui lòng thử lại."
+  },
+  "guestbook": {
+    "title": "Sổ lưu bút",
+    "subtitle": "Gửi lời chúc mừng đến cô dâu và chú rể",
+    "name": "Tên của bạn",
+    "message": "Lời chúc",
+    "messagePlaceholder": "Viết lời chúc của bạn...",
+    "submit": "Gửi lời chúc",
+    "thankYou": "Cảm ơn bạn đã gửi lời chúc!",
+    "error": "Đã xảy ra lỗi. Vui lòng thử lại.",
+    "noMessages": "Chưa có lời chúc nào. Hãy là người đầu tiên!"
+  },
+  "popup": {
+    "theWeddingOf": "The Wedding Of",
+    "coupleNames": "Tuấn Đạt & Ánh Thảo",
+    "date": "24.01.2026",
+    "inviteTo": "GỬI LỜI MỜI TỚI",
+    "guestName": "Anh Success",
+    "viewInvitation": "XEM THIỆP NGAY"
+  }
+}

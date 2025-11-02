@@ -1,26 +1,73 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Theme Color System - Matching sample page */
+  /* Primary color from sample: rgb(78, 100, 55) */
+  --theme-primary: #253218;
+
+  /* Auto-generated theme colors from primary */
+  /* These automatically adjust based on --theme-primary */
+  --theme-primary-dark: color-mix(in srgb, var(--theme-primary) 85%, black);
+  --theme-primary-darker: color-mix(in srgb, var(--theme-primary) 70%, black);
+  --theme-primary-light: color-mix(in srgb, var(--theme-primary) 85%, white);
+  --theme-primary-lighter: color-mix(in srgb, var(--theme-primary) 95%, white);
+  --theme-primary-ultra-light: color-mix(
+    in srgb,
+    var(--theme-primary) 98%,
+    white
+  );
+
+  /* Neutral colors */
+  --wedding-cream: #faf8f5;
+  --wedding-offwhite: #fafaf9;
+  --wedding-gold: #d4af37;
+  --wedding-black: #000000;
+  --wedding-white: #ffffff;
+  --wedding-text-dark: #2a2a2a;
+  --wedding-text-light: #4a4a4a;
+}
+
+@font-face {
+  font-family: 'High Spirited';
+  src: url('/fonts/HighSpirited.woff2') format('woff2'),
+    url('/fonts/HighSpirited.woff') format('woff'),
+    url('/fonts/HighSpirited.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-theme-primary: var(--theme-primary);
+  --color-theme-primary-dark: var(--theme-primary-dark);
+  --color-theme-primary-darker: var(--theme-primary-darker);
+  --color-theme-primary-light: var(--theme-primary-light);
+  --color-theme-primary-lighter: var(--theme-primary-lighter);
+  --color-theme-primary-ultra-light: var(--theme-primary-ultra-light);
+  --color-wedding-cream: var(--wedding-cream);
+  --color-wedding-gold: var(--wedding-gold);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+.font-serif {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+.font-script {
+  font-family: var(--font-script), cursive;
+}
+
+/* Ensure smooth font fallback */
+html {
+  font-family: var(--font-serif), Georgia, serif;
 }
