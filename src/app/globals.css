@@ -6,13 +6,13 @@
 
   /* Theme Color System - Matching sample page */
   /* Primary color from sample: rgb(78, 100, 55) */
-  --theme-primary: #253218;
-
+  --theme-primary: #4e6437;
+  --theme-primary-light: #bbc2b4b3;
   /* Auto-generated theme colors from primary */
   /* These automatically adjust based on --theme-primary */
   --theme-primary-dark: color-mix(in srgb, var(--theme-primary) 85%, black);
-  --theme-primary-darker: color-mix(in srgb, var(--theme-primary) 70%, black);
-  --theme-primary-light: color-mix(in srgb, var(--theme-primary) 85%, white);
+  --theme-primary-darker: color-mix(in srgb, var(--theme-primary) 60%, black);
+
   --theme-primary-lighter: color-mix(in srgb, var(--theme-primary) 95%, white);
   --theme-primary-ultra-light: color-mix(
     in srgb,
@@ -55,7 +55,7 @@
 
 body {
   background: var(--background);
-  color: var(--foreground);
+  color: var(--color-theme-primary);
   font-family: var(--font-serif), Georgia, serif;
 }
 
@@ -70,4 +70,11 @@ body {
 /* Ensure smooth font fallback */
 html {
   font-family: var(--font-serif), Georgia, serif;
+}
+
+.bg-paper {
+  background-image: url('/bg-paper.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }

@@ -120,12 +120,7 @@ export default function MobileInvitationPopup() {
                 initial='hidden'
                 animate='visible'
               >
-                <div
-                  className='text-6xl'
-                  style={{ color: 'var(--theme-primary)' }}
-                >
-                  囍
-                </div>
+                <div className='text-6xl'>囍</div>
               </motion.div>
 
               {/* Couple Illustration */}
@@ -150,7 +145,6 @@ export default function MobileInvitationPopup() {
               {/* Title */}
               <motion.h2
                 className='text-center text-sm uppercase tracking-wider mb-2'
-                style={{ color: 'var(--wedding-text-light)' }}
                 custom={2}
                 variants={contentVariants}
                 initial='hidden'
@@ -162,7 +156,6 @@ export default function MobileInvitationPopup() {
               {/* Couple Names */}
               <motion.h1
                 className='text-center text-2xl font-serif font-bold mb-3'
-                style={{ color: 'var(--theme-primary)' }}
                 custom={3}
                 variants={contentVariants}
                 initial='hidden'
@@ -179,10 +172,7 @@ export default function MobileInvitationPopup() {
                 initial='hidden'
                 animate='visible'
               >
-                <div
-                  className='text-xl font-serif font-semibold'
-                  style={{ color: 'var(--theme-primary)' }}
-                >
+                <div className='text-xl font-serif font-semibold'>
                   {t('date')}
                 </div>
               </motion.div>
@@ -196,10 +186,7 @@ export default function MobileInvitationPopup() {
                 animate='visible'
               >
                 <div className='flex-1 h-px bg-gray-300 max-w-[100px]'></div>
-                <div
-                  className='mx-4 text-xs uppercase tracking-widest'
-                  style={{ color: 'var(--wedding-text-light)' }}
-                >
+                <div className='mx-4 text-xs uppercase tracking-widest'>
                   {t('inviteTo')}
                 </div>
                 <div className='flex-1 h-px bg-gray-300 max-w-[100px]'></div>
@@ -213,10 +200,7 @@ export default function MobileInvitationPopup() {
                 initial='hidden'
                 animate='visible'
               >
-                <h3
-                  className='text-2xl font-serif font-bold'
-                  style={{ color: 'var(--theme-primary)' }}
-                >
+                <h3 className='text-2xl font-serif font-bold'>
                   {t('guestName')}
                 </h3>
               </motion.div>

@@ -30,17 +30,11 @@ export default function Timeline() {
       time: t('event2Time'),
       title: t('event2Title'),
       description: '',
-      icon: '/images/icon-tl2.png',
+      icon: '/images/icon-tl3.png',
     },
     {
       time: t('event3Time'),
       title: t('event3Title'),
-      description: '',
-      icon: '/images/icon-tl3.png',
-    },
-    {
-      time: t('event4Time'),
-      title: t('event4Title'),
       description: '',
       icon: '/images/icon-tl4.png',
     },

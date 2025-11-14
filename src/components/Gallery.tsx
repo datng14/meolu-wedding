@@ -1,9 +1,9 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import { useInView } from 'react-intersection-observer';
 
 export default function Gallery() {
   const t = useTranslations('gallery');
@@ -49,15 +49,14 @@ export default function Gallery() {
   return (
     <section
       ref={ref}
-      className="py-12 px-4 md:py-20"
+      className='py-12 px-4 md:py-20'
       style={{
-        background: `linear-gradient(to bottom, white, var(--theme-primary-ultra-light))`
+        background: `linear-gradient(to bottom, white, var(--theme-primary-ultra-light))`,
       }}
     >
-      <div className="max-w-6xl mx-auto">
+      <div className='max-w-6xl mx-auto'>
         <motion.h2
-          className="text-3xl md:text-4xl lg:text-5xl font-serif text-center mb-8 md:mb-16"
-          style={{ color: 'var(--theme-primary)' }}
+          className='text-3xl md:text-4xl lg:text-5xl font-serif text-center mb-8 md:mb-16'
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
@@ -66,15 +65,15 @@ export default function Gallery() {
         </motion.h2>
 
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4 lg:gap-6"
+          className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4 lg:gap-6'
           variants={containerVariants}
-          initial="hidden"
+          initial='hidden'
           animate={inView ? 'visible' : 'hidden'}
         >
           {images.map((image) => (
             <motion.div
               key={image.id}
-              className="relative aspect-square overflow-hidden rounded-lg shadow-md"
+              className='relative aspect-square overflow-hidden rounded-lg shadow-md'
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
@@ -83,9 +82,9 @@ export default function Gallery() {
                 src={image.src}
                 alt={image.alt}
                 fill
-                className="object-cover object-center"
+                className='object-cover object-center'
                 quality={85}
-                sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                sizes='(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw'
               />
             </motion.div>
           ))}
@@ -94,4 +93,3 @@ export default function Gallery() {
     </section>
   );
 }
-

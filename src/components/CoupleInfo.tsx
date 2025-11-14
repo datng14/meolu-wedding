@@ -58,7 +58,7 @@ export default function CoupleInfo() {
     <section
       ref={ref}
       className='p-12 md:py-20 relative overflow-hidden'
-      style={{ backgroundColor: 'var(--theme-primary)' }}
+      style={{ backgroundColor: 'var(--theme-primary-darker)' }}
     >
       {/* <Quote /> */}
       <motion.div
@@ -100,25 +100,25 @@ export default function CoupleInfo() {
       {/* <Quote /> */}
 
       {/* Decorative Flowers */}
-      {/* Flower 1 - Top right on mobile behind bride, left side on desktop */}
-      <div className='absolute top-[-5%] right-0 w-[60%] h-1/2 md:left-0 md:top-1/2 md:-translate-y-1/2 md:w-1/3 md:h-auto z-0 pointer-events-none'>
+      {/* Flower 2 - Bottom left on mobile behind groom, right side on desktop */}
+      <div className='absolute top-[-5%] right-0 w-[20%] h-1/2 md:left-0 md:top-1/2 md:-translate-y-1/2 md:w-[20%] md:h-auto z-0 pointer-events-none'>
         <Image
-          src='/images/decor-flower1.png'
+          src='/images/decor-flower2.png'
           alt=''
-          width={500}
-          height={500}
+          width={200}
+          height={200}
           className='absolute top-0 right-0 w-full h-auto md:w-full'
           quality={100}
         />
       </div>
 
-      {/* Flower 2 - Bottom left on mobile behind groom, right side on desktop */}
-      <div className='absolute bottom-[-10%] left-0 w-[50%] h-1/2 md:right-0 md:bottom-1/2 md:translate-y-1/2 md:left-auto md:w-1/3 md:h-auto z-0 pointer-events-none'>
+      {/* Flower 1 - Top right on mobile behind bride, left side on desktop */}
+      <div className='absolute bottom-[-10%] left-0 w-[30%] h-1/2 md:right-0 md:bottom-1/2 md:translate-y-1/2 md:left-auto md:w-[20%] md:h-auto z-0 pointer-events-none'>
         <Image
-          src='/images/decor-flower2.png'
+          src='/images/decor-flower1.png'
           alt=''
-          width={500}
-          height={500}
+          width={200}
+          height={200}
           className='absolute bottom-0 left-0 w-full h-auto md:w-full'
           quality={100}
         />
@@ -182,7 +182,7 @@ export default function CoupleInfo() {
           animate={inView ? 'visible' : 'hidden'}
         >
           <motion.div
-            className='relative w-full max-w-sm mx-auto h-[500px] md:w-96 md:h-[600px] overflow-hidden rounded-2xl'
+            className='relative w-full max-w-sm mx-auto h-[400px] md:w-96 md:h-[500px] overflow-hidden rounded-2xl'
             initial={{ opacity: 0, x: -20 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
             transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}

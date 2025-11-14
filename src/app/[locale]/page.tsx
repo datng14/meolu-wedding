@@ -1,5 +1,4 @@
 import Calendar from '@/components/Calendar';
-import Countdown from '@/components/Countdown';
 import CoupleInfo from '@/components/CoupleInfo';
 import Gallery from '@/components/Gallery';
 import Guestbook from '@/components/Guestbook';
@@ -21,7 +20,7 @@ export default function Home() {
       <Invitation />
       <Location />
       <Calendar />
-      <Countdown />
+      {/* <Countdown /> */}
       <Timeline />
       <Gallery />
       <RSVP />

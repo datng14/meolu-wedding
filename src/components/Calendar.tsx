@@ -1,5 +1,6 @@
 'use client';
 
+import Countdown from '@/components/Countdown';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
@@ -54,8 +55,7 @@ export default function Calendar() {
   return (
     <section
       ref={ref}
-      className='py-12 px-4 md:py-20 relative overflow-hidden'
-      style={{ backgroundColor: '#F5F3EF' }}
+      className='pt-12 px-4 md:pt-20 relative overflow-hidden bg-paper'
     >
       <div className='max-w-2xl mx-auto text-center relative z-10'>
         <motion.div
@@ -64,28 +64,21 @@ export default function Calendar() {
           transition={{ duration: 0.6 }}
         >
           {/* Year and Month */}
-          <div className='mb-8 md:mb-12'>
-            <h2
-              className='text-6xl md:text-8xl font-serif font-bold mb-4'
-              style={{ color: 'var(--theme-primary)' }}
-            >
+          <div className='mb-8 md:mb-12 relative'>
+            <h2 className='text-8xl md:text-9xl font-serif font-bold mb-4'>
               2026
             </h2>
-            <p
-              className='text-4xl md:text-5xl font-script'
-              style={{ color: 'var(--theme-primary)' }}
-            >
+            <p className='text-8xl md:text-8xl font-script absolute top-20 left-1/2 -translate-x-1/2'>
               January
             </p>
           </div>
 
           {/* Days of Week */}
-          <div className='grid grid-cols-7 gap-2 md:gap-4 mb-4'>
+          <div className='grid grid-cols-7 gap-2 md:gap-4 mb-4 mt-30'>
             {daysOfWeek.map((day) => (
               <div
                 key={day}
                 className='text-xs md:text-sm font-semibold uppercase'
-                style={{ color: 'var(--theme-primary)' }}
               >
                 {day}
               </div>
@@ -118,8 +111,9 @@ export default function Calendar() {
                             viewBox='0 0 100 100'
                             className='w-12 h-12 md:w-16 md:h-16'
                             style={{
-                              fill: 'var(--theme-primary)',
+                              fill: 'transparent',
                               stroke: 'var(--theme-primary)',
+                              strokeWidth: '2',
                             }}
                             animate={{ scale: [1, 1.1, 1] }}
                             transition={{
@@ -130,15 +124,13 @@ export default function Calendar() {
                           >
                             <path d='M50,90 C50,90 10,60 10,35 C10,20 20,10 30,10 C40,10 45,20 50,25 C55,20 60,10 70,10 C80,10 90,20 90,35 C90,60 50,90 50,90 Z' />
                           </motion.svg>
-                          <span className='absolute inset-0 flex items-center justify-center text-white font-bold text-sm md:text-base'>
+                          <span className='absolute inset-0 flex items-center justify-center text-theme-primary-darker font-bold text-sm md:text-base'>
                             {day}
                           </span>
                         </div>
                       </motion.div>
                     ) : (
-                      <span style={{ color: 'var(--theme-primary)' }}>
-                        {day}
-                      </span>
+                      <span>{day}</span>
                     )}
                   </>
                 )}
@@ -147,6 +139,7 @@ export default function Calendar() {
           </div>
         </motion.div>
       </div>
+      <Countdown />
     </section>
   );
 }

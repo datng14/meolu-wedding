@@ -94,7 +94,6 @@ export default function RSVP() {
       <div className='max-w-2xl mx-auto'>
         <motion.h2
           className='text-3xl md:text-4xl lg:text-5xl font-serif text-center mb-4 md:mb-6'
-          style={{ color: 'var(--theme-primary)' }}
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
@@ -119,10 +118,7 @@ export default function RSVP() {
         >
           <div className='space-y-6'>
             <div>
-              <label
-                htmlFor='name'
-                className='block text-gray-700 font-medium mb-2'
-              >
+              <label htmlFor='name' className='block font-medium mb-2'>
                 {t('name')} <span className='text-red-500'>*</span>
               </label>
               <input
@@ -133,12 +129,6 @@ export default function RSVP() {
                 value={formData.name}
                 onChange={handleChange}
                 className='w-full px-3 py-2.5 md:px-4 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent'
-                style={
-                  {
-                    '--tw-ring-color': 'var(--theme-primary)',
-                    focusRingColor: 'var(--theme-primary)',
-                  } as React.CSSProperties & { focusRingColor?: string }
-                }
                 onFocus={(e) => {
                   e.currentTarget.style.borderColor = 'var(--theme-primary)';
                   e.currentTarget.style.boxShadow =
@@ -152,10 +142,7 @@ export default function RSVP() {
             </div>
 
             <div>
-              <label
-                htmlFor='phone'
-                className='block text-gray-700 font-medium mb-2'
-              >
+              <label htmlFor='phone' className='block font-medium mb-2'>
                 {t('phone')}
               </label>
               <input
@@ -165,12 +152,6 @@ export default function RSVP() {
                 value={formData.phone}
                 onChange={handleChange}
                 className='w-full px-3 py-2.5 md:px-4 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent'
-                style={
-                  {
-                    '--tw-ring-color': 'var(--theme-primary)',
-                    focusRingColor: 'var(--theme-primary)',
-                  } as React.CSSProperties & { focusRingColor?: string }
-                }
                 onFocus={(e) => {
                   e.currentTarget.style.borderColor = 'var(--theme-primary)';
                   e.currentTarget.style.boxShadow =
@@ -184,7 +165,7 @@ export default function RSVP() {
             </div>
 
             <div>
-              <label className='block text-gray-700 font-medium mb-2'>
+              <label className='block font-medium mb-2'>
                 {t('attending')} <span className='text-red-500'>*</span>
               </label>
               <div className='space-y-2'>
@@ -196,12 +177,6 @@ export default function RSVP() {
                     checked={formData.attending === 'yes'}
                     onChange={handleChange}
                     className='mr-2 focus:ring-2'
-                    style={
-                      {
-                        color: 'var(--theme-primary)',
-                        '--tw-ring-color': 'var(--theme-primary)',
-                      } as React.CSSProperties
-                    }
                   />
                   {t('yes')}
                 </label>
@@ -213,12 +188,6 @@ export default function RSVP() {
                     checked={formData.attending === 'no'}
                     onChange={handleChange}
                     className='mr-2 focus:ring-2'
-                    style={
-                      {
-                        color: 'var(--theme-primary)',
-                        '--tw-ring-color': 'var(--theme-primary)',
-                      } as React.CSSProperties
-                    }
                   />
                   {t('no')}
                 </label>
@@ -227,10 +196,7 @@ export default function RSVP() {
 
             {formData.attending === 'yes' && (
               <div>
-                <label
-                  htmlFor='guests'
-                  className='block text-gray-700 font-medium mb-2'
-                >
+                <label htmlFor='guests' className='block font-medium mb-2'>
                   {t('guests')}
                 </label>
                 <input
@@ -241,12 +207,6 @@ export default function RSVP() {
                   value={formData.guests}
                   onChange={handleChange}
                   className='w-full px-3 py-2.5 md:px-4 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent'
-                  style={
-                    {
-                      '--tw-ring-color': 'var(--theme-primary)',
-                      focusRingColor: 'var(--theme-primary)',
-                    } as React.CSSProperties & { focusRingColor?: string }
-                  }
                   onFocus={(e) => {
                     e.currentTarget.style.borderColor = 'var(--theme-primary)';
                     e.currentTarget.style.boxShadow =
@@ -261,10 +221,7 @@ export default function RSVP() {
             )}
 
             <div>
-              <label
-                htmlFor='message'
-                className='block text-gray-700 font-medium mb-2'
-              >
+              <label htmlFor='message' className='block font-medium mb-2'>
                 {t('message')}
               </label>
               <textarea
@@ -275,12 +232,6 @@ export default function RSVP() {
                 onChange={handleChange}
                 placeholder={t('messagePlaceholder')}
                 className='w-full px-3 py-2.5 md:px-4 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent'
-                style={
-                  {
-                    '--tw-ring-color': 'var(--theme-primary)',
-                    focusRingColor: 'var(--theme-primary)',
-                  } as React.CSSProperties & { focusRingColor?: string }
-                }
                 onFocus={(e) => {
                   e.currentTarget.style.borderColor = 'var(--theme-primary)';
                   e.currentTarget.style.boxShadow =

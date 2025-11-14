@@ -18,8 +18,8 @@
     "time": "18:00"
   },
   "quote": {
-    "title": "WHEN TWO HEARTS BEAT AS ONE",
-    "subtitle": "They create a soul strong enough to last forever"
+    "title": "KHI HAI TRÁI TIM CÙNG CHUNG NHỊP ĐẬP",
+    "subtitle": "Họ tạo ra một linh hồn mạnh mẽ đủ để sống mãi mãi"
   },
   "invitation": {
     "title": "Kính mời tham dự",
@@ -27,16 +27,9 @@
     "time": "Vào lúc",
     "lunarDate": "(Tức ngày 26 tháng 12 năm Ất Tỵ)",
     "venue": "PAVILLON TÂN SƠN NHẤT",
+    "lobby": "Sảnh Amber",
     "address": "202 Đ. Hoàng Văn Thụ, Phường 9, Phú Nhuận, TP. HCM, Việt Nam",
-    "directions": "CHỈ ĐƯỜNG",
-    "groomFamily": "NHÀ TRAI",
-    "brideFamily": "NHÀ GÁI",
-    "groomFatherName": "Ông. Ngô Văn Tiến",
-    "groomMotherName": "Bà. Phạm Thị Thu Thúy",
-    "groomCity": "TP. HCM",
-    "brideFatherName": "Ông. Phạm Tiến Hưng",
-    "brideMotherName": "Bà. Nguyễn Thị Thắng",
-    "brideCity": "TP. HCM",
+    "mapAddress": "Pavillon Restaurant, 202 Đ. Hoàng Văn Thụ, Phường 9, Phú Nhuận, Thành phố Hồ Chí Minh 700000, Vietnam",
     "invitationText": "Kính mời tham dự",
     "celebrationText": "Tiệc thân mật của chúng tôi",
     "groomName": "Tuan Dat & Anh Thao",
@@ -65,14 +58,12 @@
     "title": "Lịch trình",
     "ceremony": "Lễ cưới",
     "reception": "Tiệc cưới",
-    "event1Time": "17:30",
-    "event1Title": "Ăn kem, chụp ảnh với photobooth",
-    "event2Time": "18:00",
-    "event2Title": "Tiếp đón khách mời",
-    "event3Time": "19:00",
-    "event3Title": "Bắt đầu lễ thành hôn",
-    "event4Time": "19:30",
-    "event4Title": "Khai tiệc chúc mừng"
+    "event1Time": "18:00",
+    "event1Title": "Tiếp đón khách mời",
+    "event2Time": "19:00",
+    "event2Title": "Bắt đầu lễ thành hôn",
+    "event3Time": "19:30",
+    "event3Title": "Khai tiệc chúc mừng"
   },
   "gallery": {
     "title": "Khoảnh khắc đẹp",
@@ -105,9 +96,8 @@
   "guestbook": {
     "title": "Sổ lưu bút",
     "subtitle": "Gửi lời chúc mừng đến cô dâu và chú rể",
-    "name": "Tên của bạn",
-    "message": "Lời chúc",
-    "messagePlaceholder": "Viết lời chúc của bạn...",
+    "name": "Tên của bạn (*)",
+    "messagePlaceholder": "Viết lời chúc của bạn (*)",
     "submit": "Gửi lời chúc",
     "thankYou": "Cảm ơn bạn đã gửi lời chúc!",
     "error": "Đã xảy ra lỗi. Vui lòng thử lại.",
