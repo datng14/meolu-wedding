@@ -55,7 +55,6 @@ export default function Hero() {
           />
         </motion.div>
 
-        {/* Text Overlay - Mobile First with gradient background */}
         <motion.div
           className='absolute bottom-0 left-0 right-0 text-white py-12 px-4 md:py-20 md:px-8'
           style={{
@@ -68,21 +67,21 @@ export default function Hero() {
         >
           <div className='max-w-4xl mx-auto text-center'>
             <motion.div
-              className='text-6xl md:text-7xl lg:text-8xl font-script mb-4 md:mb-6 leading-tight'
+              className='text-6xl md:text-7xl lg:text-8xl font-high-spirited'
               style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.5)' }}
               variants={itemVariants}
             >
               {t('saveOurDate')}
             </motion.div>
             <motion.h1
-              className='text-3xl md:text-5xl lg:text-6xl font-serif font-light tracking-wide mb-4 md:mb-6'
+              className='text-3xl md:text-5xl lg:text-6xl font-light tracking-wide mb-4 md:mb-6'
               style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.5)' }}
               variants={itemVariants}
             >
               {t('coupleNames')}
             </motion.h1>
             <motion.p
-              className='text-2xl md:text-3xl lg:text-4xl font-serif font-light'
+              className='text-2xl md:text-3xl lg:text-4xl font-light'
               style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.5)' }}
               variants={itemVariants}
             >

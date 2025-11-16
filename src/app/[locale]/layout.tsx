@@ -2,8 +2,7 @@ import { routing } from '@/i18n/routing';
 import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
-import { Lora } from 'next/font/google';
-import localFont from 'next/font/local';
+import { Dancing_Script, Lora } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import '../globals.css';
 
@@ -11,22 +10,21 @@ import '../globals.css';
 const lora = Lora({
   subsets: ['latin', 'vietnamese'],
   weight: ['400', '500', '600', '700'],
-  variable: '--font-serif',
+  variable: '--font-lora',
   display: 'swap',
   fallback: ['Georgia', 'serif'],
 });
 
-// Script font - High Spirited (local font)
-const highSpirited = localFont({
-  src: '../../../public/fonts/HighSpirited.woff2',
-  variable: '--font-script',
+const dancingScript = Dancing_Script({
+  subsets: ['latin', 'vietnamese'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-dancing-script',
   display: 'swap',
-  fallback: ['cursive'],
-  weight: '400',
+  fallback: ['Georgia', 'serif'],
 });
 
 export const metadata: Metadata = {
-  title: 'Wedding Invitation',
+  title: 'MeoLu | Wedding Invitation',
   description: 'Wedding invitation website',
 };
 
@@ -46,8 +44,8 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${lora.variable} ${highSpirited.variable}`}>
-      <body className='antialiased font-serif'>
+    <html lang={locale}>
+      <body className={`${lora.variable} ${dancingScript.variable}`}>
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>

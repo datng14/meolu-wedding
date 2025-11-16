@@ -68,7 +68,7 @@ export default function CoupleInfo() {
         animate={inView ? 'visible' : 'hidden'}
       >
         <motion.h2
-          className='text-2xl md:text-3xl lg:text-4xl font-serif uppercase tracking-wide mb-6 md:mb-8 leading-snug font-bold'
+          className='text-2xl md:text-3xl lg:text-4xl uppercase tracking-wide mb-6 md:mb-8'
           variants={itemVariants}
           transition={{ duration: 0.8, ease: [0.6, -0.05, 0.01, 0.99] }}
         >
@@ -83,10 +83,10 @@ export default function CoupleInfo() {
             delay: 0.2,
           }}
         >
-          <div className='w-px h-4 md:h-16 bg-white opacity-50'></div>
+          <div className='w-px h-10 md:h-16 bg-white opacity-50'></div>
         </motion.div>
         <motion.p
-          className='text-md md:text-lg lg:text-xl font-serif leading-relaxed'
+          className='text-lg md:text-xl lg:text-2xl leading-relaxed'
           variants={itemVariants}
           transition={{
             duration: 0.8,
@@ -159,13 +159,13 @@ export default function CoupleInfo() {
               transition={{ duration: 0.8, delay: 0.5 }}
             >
               <h3
-                className='text-5xl md:text-6xl lg:text-6xl font-script text-white mb-2'
+                className='text-4xl md:text-5xl lg:text-5xl text-white mb-2 font-dancing-script'
                 style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.3)' }}
               >
                 {t('bride')}
               </h3>
               <p
-                className='text-lg md:text-3xl lg:text-3xl font-serif text-white uppercase tracking-widest font-bold'
+                className='text-2xl md:text-3xl lg:text-3xl text-white uppercase tracking-widest'
                 style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.3)' }}
               >
                 {t('brideName')}
@@ -208,13 +208,13 @@ export default function CoupleInfo() {
               transition={{ duration: 0.8, delay: 0.9 }}
             >
               <h3
-                className='text-5xl md:text-6xl lg:text-6xl font-script text-white mb-2'
+                className='text-5xl md:text-6xl lg:text-6xl text-white mb-2 font-dancing-script'
                 style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.3)' }}
               >
                 {t('groom')}
               </h3>
               <p
-                className='text-lg md:text-3xl lg:text-3xl font-serif text-white uppercase tracking-widest font-bold'
+                className='text-2xl md:text-3xl lg:text-3xl text-white uppercase tracking-widest'
                 style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.3)' }}
               >
                 {t('groomName')}

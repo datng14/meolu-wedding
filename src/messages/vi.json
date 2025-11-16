@@ -13,7 +13,7 @@
   },
   "hero": {
     "saveOurDate": "Save our date",
-    "coupleNames": "Tuan Dat & Anh Thao",
+    "coupleNames": "Tuấn Đạt & Ánh Thảo",
     "date": "24.01.2026",
     "time": "18:00"
   },
@@ -34,7 +34,7 @@
     "celebrationText": "Tiệc thân mật của chúng tôi",
     "groomName": "Tuan Dat & Anh Thao",
     "brideName": "",
-    "dayOfWeek": "THỨ BẢY",
+    "dayOfWeek": "Thứ bảy",
     "location": "Địa điểm",
     "addToCalendar": "Thêm vào lịch"
   },
@@ -42,8 +42,8 @@
     "title": "Cô dâu & Chú rể",
     "bride": "Cô dâu",
     "groom": "Chú rể",
-    "brideName": "Ánh Thảo",
-    "groomName": "Tuấn Đạt",
+    "brideName": "Nguyễn Huỳnh Ánh Thảo",
+    "groomName": "Nguyễn Tuấn Đạt",
     "name": "Tên",
     "description": "Mô tả"
   },
@@ -66,7 +66,7 @@
     "event3Title": "Khai tiệc chúc mừng"
   },
   "gallery": {
-    "title": "Khoảnh khắc đẹp",
+    "title": "Hình kỷ niệm",
     "viewAll": "Xem tất cả"
   },
   "location": {
@@ -94,7 +94,7 @@
     "error": "Đã xảy ra lỗi. Vui lòng thử lại."
   },
   "guestbook": {
-    "title": "Sổ lưu bút",
+    "title": "Lời chúc mừng",
     "subtitle": "Gửi lời chúc mừng đến cô dâu và chú rể",
     "name": "Tên của bạn (*)",
     "messagePlaceholder": "Viết lời chúc của bạn (*)",

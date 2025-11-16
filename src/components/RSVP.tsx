@@ -93,7 +93,7 @@ export default function RSVP() {
     >
       <div className='max-w-2xl mx-auto'>
         <motion.h2
-          className='text-3xl md:text-4xl lg:text-5xl font-serif text-center mb-4 md:mb-6'
+          className='text-5xl md:text-6xl lg:text-7xl text-center mb-4 md:mb-6 font-dancing-script'
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
@@ -101,7 +101,7 @@ export default function RSVP() {
           {t('title')}
         </motion.h2>
         <motion.p
-          className='text-center text-sm md:text-base text-gray-600 mb-8 md:mb-12'
+          className='text-center text-base md:text-lg lg:text-xl text-gray-600 mb-8 md:mb-12'
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
@@ -118,7 +118,10 @@ export default function RSVP() {
         >
           <div className='space-y-6'>
             <div>
-              <label htmlFor='name' className='block font-medium mb-2'>
+              <label
+                htmlFor='name'
+                className='block font-medium mb-2 text-base md:text-lg'
+              >
                 {t('name')} <span className='text-red-500'>*</span>
               </label>
               <input
@@ -142,7 +145,10 @@ export default function RSVP() {
             </div>
 
             <div>
-              <label htmlFor='phone' className='block font-medium mb-2'>
+              <label
+                htmlFor='phone'
+                className='block font-medium mb-2 text-base md:text-lg'
+              >
                 {t('phone')}
               </label>
               <input
@@ -165,11 +171,11 @@ export default function RSVP() {
             </div>
 
             <div>
-              <label className='block font-medium mb-2'>
+              <label className='block font-medium mb-2 text-base md:text-lg'>
                 {t('attending')} <span className='text-red-500'>*</span>
               </label>
               <div className='space-y-2'>
-                <label className='flex items-center'>
+                <label className='flex items-center text-base md:text-lg'>
                   <input
                     type='radio'
                     name='attending'
@@ -180,7 +186,7 @@ export default function RSVP() {
                   />
                   {t('yes')}
                 </label>
-                <label className='flex items-center'>
+                <label className='flex items-center text-base md:text-lg'>
                   <input
                     type='radio'
                     name='attending'
@@ -196,7 +202,10 @@ export default function RSVP() {
 
             {formData.attending === 'yes' && (
               <div>
-                <label htmlFor='guests' className='block font-medium mb-2'>
+                <label
+                  htmlFor='guests'
+                  className='block font-medium mb-2 text-base md:text-lg'
+                >
                   {t('guests')}
                 </label>
                 <input
@@ -221,7 +230,10 @@ export default function RSVP() {
             )}
 
             <div>
-              <label htmlFor='message' className='block font-medium mb-2'>
+              <label
+                htmlFor='message'
+                className='block font-medium mb-2 text-base md:text-lg'
+              >
                 {t('message')}
               </label>
               <textarea

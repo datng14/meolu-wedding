@@ -29,7 +29,7 @@ const TimeUnit = ({ value, label }: { value: number; label: string }) => (
   <motion.div className='flex flex-col items-center' variants={numberVariants}>
     <motion.div
       key={value}
-      className='text-3xl md:text-4xl lg:text-6xl font-serif font-semibold mb-1'
+      className='text-3xl md:text-4xl lg:text-6xl font-semibold mb-1'
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.3 }}
@@ -83,7 +83,7 @@ export default function Countdown() {
         animate={inView ? 'visible' : 'hidden'}
       >
         <motion.h2
-          className='text-lg md:text-xl lg:text-2xl font-serif mb-8 md:mb-12 leading-relaxed'
+          className='text-xl md:text-2xl lg:text-3xl mb-8 md:mb-12 leading-relaxed'
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
@@ -92,15 +92,15 @@ export default function Countdown() {
         </motion.h2>
         <div className='flex justify-center gap-2 md:gap-3 lg:gap-4 flex-wrap'>
           <TimeUnit value={timeLeft.days} label={t('days')} />
-          <span className='text-3xl md:text-4xl lg:text-5xl font-serif flex items-center'>
+          <span className='text-3xl md:text-4xl lg:text-5xl flex items-center'>
             :
           </span>
           <TimeUnit value={timeLeft.hours} label={t('hours')} />
-          <span className='text-3xl md:text-4xl lg:text-5xl font-serif flex items-center'>
+          <span className='text-3xl md:text-4xl lg:text-5xl flex items-center'>
             :
           </span>
           <TimeUnit value={timeLeft.minutes} label={t('minutes')} />
-          <span className='text-3xl md:text-4xl lg:text-5xl font-serif flex items-center'>
+          <span className='text-3xl md:text-4xl lg:text-5xl flex items-center'>
             :
           </span>
           <TimeUnit value={timeLeft.seconds} label={t('seconds')} />

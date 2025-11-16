@@ -47,10 +47,13 @@ export default function Location() {
   };
 
   return (
-    <section ref={ref} className='pb-12 px-4 md:pb-20 bg-white bg-paper'>
+    <section
+      ref={ref}
+      className='pt-10 pb-20 md:pb-20 px-4 md:pt-10 bg-white bg-paper'
+    >
       <div className='max-w-6xl mx-auto'>
         <motion.h2
-          className='text-xl md:text-2xl lg:text-3xl font-serif text-center mb-4 md:mb-8'
+          className='text-xl md:text-1xl lg:text-2xl text-center mb-4 md:mb-4'
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
@@ -60,20 +63,16 @@ export default function Location() {
         </motion.h2>
 
         {/* Venue */}
-        <div className='space-y-6 text-center'>
-          <p className='text-xl md:text-2xl lg:text-3xl font-serif font-bold'>
-            {tInvitation('venue')}
-          </p>
-          <p className='text-xl md:text-2xl font-serif'>
-            {tInvitation('lobby')}
-          </p>
-          <p className='text-xl md:text-2xl font-serif'>
+        <div className='space-y-2 text-center text-lg md:text-xl lg:text-2xl'>
+          <p className='font-bold'>{tInvitation('venue')}</p>
+          <p>{tInvitation('lobby')}</p>
+          <p>
             {t('address')}: {tInvitation('address')}
           </p>
-          <div className='flex flex-col sm:flex-row gap-4 justify-center mt-6'>
+          <div className='text-center mt-6'>
             <motion.button
               onClick={handleAddToCalendar}
-              className='px-8 py-3 text-sm md:text-base text-white rounded-full uppercase tracking-wider transition-colors border-2 cursor-pointer'
+              className='px-8 py-3 text-base md:text-lg lg:text-xl text-white rounded-full uppercase tracking-wider transition-colors border-2 cursor-pointer'
               style={{
                 backgroundColor: 'var(--theme-primary)',
               }}

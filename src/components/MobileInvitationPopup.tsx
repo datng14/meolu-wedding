@@ -155,7 +155,7 @@ export default function MobileInvitationPopup() {
 
               {/* Couple Names */}
               <motion.h1
-                className='text-center text-2xl font-serif font-bold mb-3'
+                className='text-center text-2xl font-bold mb-3'
                 custom={3}
                 variants={contentVariants}
                 initial='hidden'
@@ -172,9 +172,7 @@ export default function MobileInvitationPopup() {
                 initial='hidden'
                 animate='visible'
               >
-                <div className='text-xl font-serif font-semibold'>
-                  {t('date')}
-                </div>
+                <div className='text-xl font-semibold'>{t('date')}</div>
               </motion.div>
 
               {/* Divider */}
@@ -200,9 +198,7 @@ export default function MobileInvitationPopup() {
                 initial='hidden'
                 animate='visible'
               >
-                <h3 className='text-2xl font-serif font-bold'>
-                  {t('guestName')}
-                </h3>
+                <h3 className='text-2xl font-bold'>{t('guestName')}</h3>
               </motion.div>
 
               {/* Button */}

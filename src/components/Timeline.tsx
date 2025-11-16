@@ -69,8 +69,7 @@ export default function Timeline() {
 
       <div className='max-w-4xl mx-auto relative z-10'>
         <motion.h2
-          className='text-5xl md:text-6xl lg:text-7xl font-script text-center mb-12 md:mb-20 text-white'
-          style={{ textShadow: '2px 2px 10px rgba(0,0,0,0.7)' }}
+          className='text-5xl md:text-6xl lg:text-7xl text-center mb-12 md:mb-20 text-white font-dancing-script'
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
@@ -113,13 +112,13 @@ export default function Timeline() {
                 {/* Content */}
                 <div className='text-white w-4/12'>
                   <div
-                    className='text-xl md:text-2xl lg:text-3xl font-bold mb-1 font-serif'
+                    className='text-2xl md:text-3xl lg:text-4xl mb-1'
                     style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.5)' }}
                   >
                     {event.time}
                   </div>
                   <h3
-                    className='text-xs md:text-sm lg:text-base font-normal'
+                    className='text-base md:text-lg lg:text-xl font-normal'
                     style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.5)' }}
                   >
                     {event.title}

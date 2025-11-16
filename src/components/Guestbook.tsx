@@ -121,8 +121,7 @@ export default function Guestbook() {
     >
       <div className='max-w-6xl mx-auto relative z-10'>
         <motion.h2
-          className='text-7xl md:text-8xl lg:text-9xl font-script text-center mb-6 md:mb-8 font-bold'
-          style={{ textShadow: '1px 1px 6px rgba(0,0,0,0.3)' }}
+          className='text-5xl md:text-6xl lg:text-7xl text-center mb-6 md:mb-8 font-dancing-script'
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
@@ -130,7 +129,7 @@ export default function Guestbook() {
           {t('title')}
         </motion.h2>
         <motion.p
-          className='text-center text-sm md:text-base mb-8 md:mb-12 opacity-90'
+          className='text-center text-base md:text-lg lg:text-xl mb-8 md:mb-12'
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
@@ -141,7 +140,7 @@ export default function Guestbook() {
         {/* Form */}
         <motion.form
           onSubmit={handleSubmit}
-          className='rounded-lg shadow-lg p-6 md:p-8 mb-8 md:mb-12 text-white'
+          className='rounded-lg shadow-lg p-6 md:p-8 mb-8 md:mb-12'
           style={{ backgroundColor: 'var(--theme-primary-light)' }}
           variants={cardVariants}
           initial='hidden'
@@ -209,7 +208,7 @@ export default function Guestbook() {
         <div className='space-y-6'>
           {messages.length === 0 ? (
             <motion.p
-              className='text-center py-12'
+              className='text-center py-12 text-base md:text-lg'
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ delay: 0.4 }}
@@ -220,17 +219,15 @@ export default function Guestbook() {
             messages.map((message, index) => (
               <motion.div
                 key={message.id}
-                className='bg-white rounded-lg shadow-md p-4 md:p-6 border'
+                className='bg-white rounded-lg shadow-md p-4 md:p-6'
                 variants={messageVariants}
                 initial='hidden'
                 animate={inView ? 'visible' : 'hidden'}
                 transition={{ delay: index * 0.1 }}
               >
                 <div className='flex items-start justify-between mb-2 md:mb-3'>
-                  <h3 className='font-semibold text-base md:text-lg font-serif'>
-                    {message.name}
-                  </h3>
-                  <span className='text-xs md:text-sm'>
+                  <h3 className='text-base md:text-lg'>{message.name}</h3>
+                  <span className='text-sm md:text-base'>
                     {message.submittedAt.toLocaleDateString()}
                   </span>
                 </div>

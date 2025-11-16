@@ -56,7 +56,7 @@ export default function Gallery() {
     >
       <div className='max-w-6xl mx-auto'>
         <motion.h2
-          className='text-3xl md:text-4xl lg:text-5xl font-serif text-center mb-8 md:mb-16'
+          className='text-6xl md:text-7xl lg:text-8xl text-center mb-8 md:mb-16 font-dancing-script'
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}

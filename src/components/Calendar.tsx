@@ -55,7 +55,7 @@ export default function Calendar() {
   return (
     <section
       ref={ref}
-      className='pt-12 px-4 md:pt-20 relative overflow-hidden bg-paper'
+      className='px-4 md:pt-15 relative overflow-hidden bg-paper'
     >
       <div className='max-w-2xl mx-auto text-center relative z-10'>
         <motion.div
@@ -65,16 +65,14 @@ export default function Calendar() {
         >
           {/* Year and Month */}
           <div className='mb-8 md:mb-12 relative'>
-            <h2 className='text-8xl md:text-9xl font-serif font-bold mb-4'>
-              2026
-            </h2>
-            <p className='text-8xl md:text-8xl font-script absolute top-20 left-1/2 -translate-x-1/2'>
+            <h2 className='text-8xl md:text-5xl mb-4'>2026</h2>
+            <p className='text-6xl md:text-7xl absolute top-20 left-1/2 -translate-x-1/2 font-high-spirited'>
               January
             </p>
           </div>
 
           {/* Days of Week */}
-          <div className='grid grid-cols-7 gap-2 md:gap-4 mb-4 mt-30'>
+          <div className='grid grid-cols-7 mb-4 mt-30 text-theme-primary-lighter'>
             {daysOfWeek.map((day) => (
               <div
                 key={day}
@@ -86,17 +84,17 @@ export default function Calendar() {
           </div>
 
           {/* Calendar Grid */}
-          <div className='grid grid-cols-7 gap-2 md:gap-4 mb-8'>
+          <div className='grid grid-cols-7 mb-8'>
             {calendarDays.map((day, index) => (
               <div
                 key={index}
-                className='aspect-square flex items-center justify-center text-base md:text-lg font-serif relative'
+                className='aspect-square flex items-center justify-center text-base md:text-lg relative'
               >
                 {day && (
                   <>
                     {day === weddingDay ? (
                       <motion.div
-                        className='absolute inset-0 flex items-center justify-center'
+                        className='absolute inset-0 flex items-center justify-center font-bold'
                         initial={{ scale: 0 }}
                         animate={inView ? { scale: 1 } : { scale: 0 }}
                         transition={{
