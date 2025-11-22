@@ -10,7 +10,7 @@
   --theme-primary-light: #bbc2b4b3;
   /* Auto-generated theme colors from primary */
   /* These automatically adjust based on --theme-primary */
-  --theme-primary-dark: color-mix(in srgb, var(--theme-primary) 85%, black);
+  --theme-primary-dark: #38511f;
   --theme-primary-darker: color-mix(in srgb, var(--theme-primary) 60%, black);
 
   --theme-primary-lighter: color-mix(in srgb, var(--theme-primary) 95%, white);
@@ -42,6 +42,15 @@
   --color-theme-primary-ultra-light: var(--theme-primary-ultra-light);
 }
 
+@font-face {
+  font-family: 'Ergisa';
+  src: url('/fonts/Ergisa-Regular.woff') format('woff'),
+    url('/fonts/Ergisa-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 .font-lora {
   font-family: var(--font-lora);
 }
@@ -52,6 +61,10 @@
 
 .font-high-spirited {
   font-family: 'High Spirited', cursive;
+}
+
+.font-ergisa {
+  font-family: 'Ergisa', cursive;
 }
 
 html,

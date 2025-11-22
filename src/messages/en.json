@@ -18,20 +18,18 @@
     "time": "18:00"
   },
   "quote": {
-    "title": "WHEN TWO HEARTS BEAT AS ONE",
-    "subtitle": "They create a soul strong enough to last forever"
+    "title": "A NEW JOURNEY BEGIN",
+    "subtitle": "Together, we are shaping a home grounded in commitment."
   },
   "invitation": {
-    "title": "We cordially invite you",
+    "title": "We warmly invite you",
     "subtitle": "to attend our wedding party",
     "time": "At",
     "lunarDate": "(Lunar calendar: December 26th, Year of the Snake)",
     "venue": "PAVILLON TAN SON NHAT",
-    "lobby": "Amber Lobby",
-    "address": "202 Hoang Van Thu St, Ward 9, Phu Nhuan, HCMC, Vietnam",
+    "lobby": "Lobby: Amber",
+    "address": "202 Hoang Van Thu St, Ward Duc Nhuan, Ho Chi Minh City, Vietnam",
     "mapAddress": "Pavillon Tân Sơn Nhất, 202 Hoang Van Thu St, Ward 9, Phu Nhuan, HCMC, Vietnam",
-    "invitationText": "We cordially invite you",
-    "celebrationText": "to attend our wedding celebration",
     "groomName": "Tuan Dat & Anh Thao",
     "brideName": "",
     "dayOfWeek": "SATURDAY",
@@ -42,13 +40,13 @@
     "title": "Bride & Groom",
     "bride": "Bride",
     "groom": "Groom",
-    "brideName": "Nguyen Huynh Anh Thao",
-    "groomName": "Nguyen Tuan Dat",
+    "brideName": "Nguyen Huynh Anh Thao (Lucia)",
+    "groomName": "Nguyen Tuan Dat (Melvin)",
     "name": "Name",
     "description": "Description"
   },
   "countdown": {
-    "title": "Countdown to the wedding",
+    "title": "Countdown to the big day",
     "days": "Days",
     "hours": "Hours",
     "minutes": "Minutes",
@@ -56,17 +54,17 @@
   },
   "timeline": {
     "title": "Timeline",
-    "ceremony": "Ceremony",
+    "ceremony": "Wedding Ceremony",
     "reception": "Reception",
     "event1Time": "18:00",
     "event1Title": "Guest reception",
     "event2Time": "19:00",
     "event2Title": "Wedding ceremony begins",
     "event3Time": "19:30",
-    "event3Title": "Reception celebration"
+    "event3Title": "Wedding banquet"
   },
   "gallery": {
-    "title": "Our Memories",
+    "title": "Pre-Wedding Album",
     "viewAll": "View all"
   },
   "location": {
@@ -80,15 +78,14 @@
   "rsvp": {
     "title": "RSVP",
     "subtitle": "Please let us know if you can attend",
-    "name": "Full name",
-    "email": "Email",
+    "name": "Your name",
     "phone": "Phone number",
     "attending": "Will you be attending?",
     "yes": "Yes, I will attend",
     "no": "No, I'm sorry I can't attend",
     "guests": "Number of guests",
-    "message": "Message",
-    "messagePlaceholder": "Enter your message...",
+    "message": "Note",
+    "messagePlaceholder": "Please let us know about vegan/vegetarian preferences or other special requests",
     "submit": "Submit RSVP",
     "thankYou": "Thank you for your RSVP!",
     "error": "An error occurred. Please try again."

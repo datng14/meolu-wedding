@@ -24,8 +24,8 @@ const dancingScript = Dancing_Script({
 });
 
 export const metadata: Metadata = {
-  title: 'MeoLu | Wedding Invitation',
-  description: 'Wedding invitation website',
+  title: 'Tuan Dat & Anh Thao | Wedding Invitation',
+  description: 'Wedding invitation website for Tuan Dat & Anh Thao',
 };
 
 export default async function RootLayout({

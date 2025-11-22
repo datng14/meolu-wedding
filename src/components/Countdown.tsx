@@ -13,23 +13,24 @@ interface TimeLeft {
 }
 
 const numberVariants = {
-  hidden: { opacity: 0, scale: 0.5 },
+  hidden: { opacity: 0, scale: 0.3, rotate: -180 },
   visible: {
     opacity: 1,
     scale: 1,
+    rotate: 0,
     transition: {
       type: 'spring' as const,
       stiffness: 200,
-      damping: 15,
+      damping: 12,
     },
   },
 };
 
-const TimeUnit = ({ value, label }: { value: number; label: string }) => (
+const TimeUnit = ({ value }: { value: number; label: string }) => (
   <motion.div className='flex flex-col items-center' variants={numberVariants}>
     <motion.div
       key={value}
-      className='text-3xl md:text-4xl lg:text-6xl font-semibold mb-1'
+      className='text-3xl md:text-3xl lg:text-4xl font-semibold mb-1'
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.3 }}
@@ -83,14 +84,23 @@ export default function Countdown() {
         animate={inView ? 'visible' : 'hidden'}
       >
         <motion.h2
-          className='text-xl md:text-2xl lg:text-3xl mb-8 md:mb-12 leading-relaxed'
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6 }}
+          className='text-xl lg:text-2xl mb-8 md:mb-12 leading-relaxed'
+          initial={{ opacity: 0, y: 30, scale: 0.8 }}
+          animate={
+            inView
+              ? { opacity: 1, y: 0, scale: 1 }
+              : { opacity: 0, y: 30, scale: 0.8 }
+          }
+          transition={{
+            duration: 0.8,
+            type: 'spring',
+            stiffness: 100,
+            damping: 10,
+          }}
         >
           {t('title')}
         </motion.h2>
-        <div className='flex justify-center gap-2 md:gap-3 lg:gap-4 flex-wrap'>
+        <div className='flex justify-center gap-2 md:gap-3 lg:gap-4 flex-wrap font-ergisa'>
           <TimeUnit value={timeLeft.days} label={t('days')} />
           <span className='text-3xl md:text-4xl lg:text-5xl flex items-center'>
             :

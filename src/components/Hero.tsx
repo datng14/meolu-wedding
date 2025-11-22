@@ -24,10 +24,11 @@ export default function Hero() {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 30, scale: 0.9 },
     visible: {
       opacity: 1,
       y: 0,
+      scale: 1,
       transition: {
         duration: 0.8,
         ease: [0.6, -0.05, 0.01, 0.99] as const,
@@ -41,8 +42,8 @@ export default function Hero() {
       <div className='relative w-full h-screen overflow-hidden'>
         <motion.div
           className='absolute inset-0'
-          initial={{ scale: 1.1 }}
-          animate={inView ? { scale: 1 } : { scale: 1.1 }}
+          initial={{ scale: 1.2, opacity: 0, rotate: -2 }}
+          animate={inView ? { scale: 1, opacity: 1, rotate: 0 } : { scale: 1.2, opacity: 0, rotate: -2 }}
           transition={{ duration: 1.5, ease: 'easeOut' }}
         >
           <Image

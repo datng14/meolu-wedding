@@ -134,8 +134,12 @@ export default function CoupleInfo() {
         >
           <motion.div
             className='relative w-full max-w-sm mx-auto h-[400px] md:w-96 md:h-[500px] overflow-hidden rounded-2xl aspect-317/400'
-            initial={{ opacity: 0, x: 20 }}
-            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 100, rotate: 45 }}
+            animate={
+              inView
+                ? { opacity: 1, x: 0, rotate: 0 }
+                : { opacity: 0, x: 100, rotate: 45 }
+            }
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
           >
             <Image
@@ -183,8 +187,12 @@ export default function CoupleInfo() {
         >
           <motion.div
             className='relative w-full max-w-sm mx-auto h-[400px] md:w-96 md:h-[500px] overflow-hidden rounded-2xl'
-            initial={{ opacity: 0, x: -20 }}
-            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -100, rotate: -45 }}
+            animate={
+              inView
+                ? { opacity: 1, x: 0, rotate: 0 }
+                : { opacity: 0, x: -100, rotate: -45 }
+            }
             transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
           >
             <Image

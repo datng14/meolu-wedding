@@ -91,24 +91,28 @@ export default function Guestbook() {
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 80, rotate: -5 },
     visible: {
       opacity: 1,
       y: 0,
+      rotate: 0,
       transition: {
         duration: 0.8,
-        ease: 'easeOut' as const,
+        type: 'spring',
+        stiffness: 100,
+        damping: 12,
       },
     },
   };
 
   const messageVariants = {
-    hidden: { opacity: 0, x: -20 },
+    hidden: { opacity: 0, x: -50, rotate: -3 },
     visible: {
       opacity: 1,
       x: 0,
+      rotate: 0,
       transition: {
-        duration: 0.5,
+        duration: 0.6,
         ease: 'easeOut' as const,
       },
     },
@@ -122,9 +126,14 @@ export default function Guestbook() {
       <div className='max-w-6xl mx-auto relative z-10'>
         <motion.h2
           className='text-5xl md:text-6xl lg:text-7xl text-center mb-6 md:mb-8 font-dancing-script'
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: -30, scale: 0.9 }}
+          animate={inView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: -30, scale: 0.9 }}
+          transition={{
+            duration: 0.8,
+            type: 'spring',
+            stiffness: 120,
+            damping: 10
+          }}
         >
           {t('title')}
         </motion.h2>

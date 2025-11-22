@@ -12,26 +12,24 @@
     "required": "Trường này là bắt buộc"
   },
   "hero": {
-    "saveOurDate": "Save our date",
+    "saveOurDate": "Lễ Thành Hôn",
     "coupleNames": "Tuấn Đạt & Ánh Thảo",
     "date": "24.01.2026",
-    "time": "18:00"
+    "time": "19:00"
   },
   "quote": {
-    "title": "KHI HAI TRÁI TIM CÙNG CHUNG NHỊP ĐẬP",
-    "subtitle": "Họ tạo ra một linh hồn mạnh mẽ đủ để sống mãi mãi"
+    "title": "MỘT HÀNH TRÌNH MỚI MỞ RA",
+    "subtitle": "Hành trình kết nối và xây dựng tổ ấm từ đây bắt đầu"
   },
   "invitation": {
-    "title": "Kính mời tham dự",
-    "subtitle": "Tiệc cưới của chúng tôi",
+    "title": "TRÂN TRỌNG KÍNH MỜI",
+    "subtitle": "Lễ thành hôn của chúng tôi",
     "time": "Vào lúc",
     "lunarDate": "(Tức ngày 26 tháng 12 năm Ất Tỵ)",
-    "venue": "PAVILLON TÂN SƠN NHẤT",
+    "venue": "TRUNG TÂM HỘI NGHỊ & TIỆC CƯỚI PAVILLON TÂN SƠN NHẤT",
     "lobby": "Sảnh Amber",
-    "address": "202 Đ. Hoàng Văn Thụ, Phường 9, Phú Nhuận, TP. HCM, Việt Nam",
+    "address": "202 Đ. Hoàng Văn Thụ, Phường Đức Nhuận, TP. HCM, Việt Nam",
     "mapAddress": "Pavillon Restaurant, 202 Đ. Hoàng Văn Thụ, Phường 9, Phú Nhuận, Thành phố Hồ Chí Minh 700000, Vietnam",
-    "invitationText": "Kính mời tham dự",
-    "celebrationText": "Tiệc thân mật của chúng tôi",
     "groomName": "Tuan Dat & Anh Thao",
     "brideName": "",
     "dayOfWeek": "Thứ bảy",
@@ -66,12 +64,12 @@
     "event3Title": "Khai tiệc chúc mừng"
   },
   "gallery": {
-    "title": "Hình kỷ niệm",
+    "title": "Album cưới",
     "viewAll": "Xem tất cả"
   },
   "location": {
     "title": "Địa điểm",
-    "ceremony": "Lễ cưới",
+    "ceremony": "Lễ thành hôn",
     "reception": "Tiệc cưới",
     "address": "Địa chỉ",
     "map": "Bản đồ",
@@ -81,14 +79,13 @@
     "title": "Xác nhận tham dự",
     "subtitle": "Vui lòng cho chúng tôi biết bạn có thể tham dự",
     "name": "Họ và tên",
-    "email": "Email",
     "phone": "Số điện thoại",
     "attending": "Bạn có tham dự không?",
     "yes": "Có, tôi sẽ tham dự",
     "no": "Không, tôi rất tiếc không thể tham dự",
     "guests": "Số lượng khách",
-    "message": "Lời nhắn",
-    "messagePlaceholder": "Nhập lời nhắn của bạn...",
+    "message": "Lưu ý",
+    "messagePlaceholder": "Nhập lưu ý của bạn liên quan đến món chay nếu có nhu cầu hoặc liên quan đến khách mời đi cùng...",
     "submit": "Gửi xác nhận",
     "thankYou": "Cảm ơn bạn đã xác nhận!",
     "error": "Đã xảy ra lỗi. Vui lòng thử lại."
@@ -104,7 +101,7 @@
     "noMessages": "Chưa có lời chúc nào. Hãy là người đầu tiên!"
   },
   "popup": {
-    "theWeddingOf": "The Wedding Of",
+    "theWeddingOf": "LỄ THÀNH HÔN",
     "coupleNames": "Tuấn Đạt & Ánh Thảo",
     "date": "24.01.2026",
     "inviteTo": "GỬI LỜI MỜI TỚI",

@@ -7,7 +7,6 @@ import Invitation from '@/components/Invitation';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import Location from '@/components/Location';
 import MobileInvitationPopup from '@/components/MobileInvitationPopup';
-import RSVP from '@/components/RSVP';
 import Timeline from '@/components/Timeline';
 
 export default function Home() {
@@ -20,10 +19,9 @@ export default function Home() {
       <Invitation />
       <Location />
       <Calendar />
-      {/* <Countdown /> */}
       <Timeline />
       <Gallery />
-      <RSVP />
+      {/* <RSVP /> */}
       <Guestbook />
     </main>
   );

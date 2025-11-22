@@ -16,21 +16,31 @@ export default function Invitation() {
   return (
     <section
       ref={ref}
-      className='pt-16 px-4 md:pt-20 bg-white relative overflow-hidden bg-paper'
+      className='pt-10 px-4 md:pt-10 bg-white relative overflow-hidden bg-paper'
     >
       <div className='max-w-4xl mx-auto relative z-10'>
         <motion.div
           className='text-center space-y-8 md:space-y-12'
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, rotateY: -90 }}
+          animate={
+            inView ? { opacity: 1, rotateY: 0 } : { opacity: 0, rotateY: -90 }
+          }
+          transition={{ duration: 1, ease: 'easeOut' }}
+          style={{ transformStyle: 'preserve-3d' }}
         >
           {/* Logo/Monogram with signature background */}
           <motion.div
             className='flex justify-center my-8 font-dancing-script'
-            initial={{ scale: 0 }}
-            animate={inView ? { scale: 1 } : { scale: 0 }}
-            transition={{ delay: 0.3, type: 'spring', stiffness: 200 }}
+            initial={{ scale: 0, rotate: -180 }}
+            animate={
+              inView ? { scale: 1, rotate: 0 } : { scale: 0, rotate: -180 }
+            }
+            transition={{
+              delay: 0.3,
+              type: 'spring',
+              stiffness: 150,
+              damping: 12,
+            }}
           >
             <div className='relative w-20 h-30 md:w-40 md:h-40'>
               <Image
@@ -49,9 +59,9 @@ export default function Invitation() {
           </motion.div>
 
           {/* Invitation Text */}
-          <div className='text-xl md:text-2xl lg:text-3xl'>
-            <p>{t('invitationText')}</p>
-            <p>{t('celebrationText')}</p>
+          <div className='text-lg md:text-lg lg:text-xl'>
+            <p>{t('title')}</p>
+            <p>{t('subtitle')}</p>
           </div>
 
           <motion.div
@@ -64,19 +74,19 @@ export default function Invitation() {
           </motion.div>
 
           <div className='y-12'>
-            <h2 className='text-3xl md:text-4xl lg:text-5xl text-theme-primary uppercase'>
+            <h2 className='text-2xl md:text-3xl lg:text-4xl text-theme-primary-dark uppercase'>
               {tCouple('groomName')}
             </h2>
-            <p className='text-3xl md:text-4xl lg:text-5xl font-dancing-script'>
+            <p className='text-2xl md:text-3xl lg:text-4xl font-dancing-script'>
               &
             </p>
-            <h2 className='text-3xl md:text-4xl lg:text-5xl text-theme-primary uppercase'>
+            <h2 className='text-2xl md:text-3xl lg:text-4xl text-theme-primary-dark uppercase'>
               {tCouple('brideName')}
             </h2>
           </div>
 
           {/* Date and Time */}
-          <div className='flex justify-center items-center gap-4 text-xl md:text-2xl lg:text-3xl'>
+          <div className='flex justify-center items-center gap-4 text-lg md:text-lg lg:text-xl'>
             <div className='flex justify-center items-center gap-4'>
               <p className=''>18:00</p>
               <span>|</span>

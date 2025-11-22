@@ -41,12 +41,13 @@ export default function Timeline() {
   ];
 
   const itemVariants = {
-    hidden: { opacity: 0, x: -50 },
+    hidden: { opacity: 0, x: 100, scale: 0.7 },
     visible: {
       opacity: 1,
       x: 0,
+      scale: 1,
       transition: {
-        duration: 0.6,
+        duration: 0.7,
         ease: 'easeOut' as const,
       },
     },
@@ -70,9 +71,13 @@ export default function Timeline() {
       <div className='max-w-4xl mx-auto relative z-10'>
         <motion.h2
           className='text-5xl md:text-6xl lg:text-7xl text-center mb-12 md:mb-20 text-white font-dancing-script'
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: -50, rotateX: -90 }}
+          animate={inView ? { opacity: 1, y: 0, rotateX: 0 } : { opacity: 0, y: -50, rotateX: -90 }}
+          transition={{
+            duration: 0.8,
+            ease: 'easeOut'
+          }}
+          style={{ transformStyle: 'preserve-3d' }}
         >
           {t('title')}
         </motion.h2>

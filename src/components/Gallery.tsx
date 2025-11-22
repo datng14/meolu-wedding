@@ -35,12 +35,13 @@ export default function Gallery() {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
+    hidden: { opacity: 0, scale: 0.5, rotate: -15 },
     visible: {
       opacity: 1,
       scale: 1,
+      rotate: 0,
       transition: {
-        duration: 0.5,
+        duration: 0.6,
         ease: 'easeOut' as const,
       },
     },
@@ -49,17 +50,19 @@ export default function Gallery() {
   return (
     <section
       ref={ref}
-      className='py-12 px-4 md:py-20'
-      style={{
-        background: `linear-gradient(to bottom, white, var(--theme-primary-ultra-light))`,
-      }}
+      className='py-12 px-4 md:py-20 relative overflow-hidden bg-paper'
     >
       <div className='max-w-6xl mx-auto'>
         <motion.h2
           className='text-6xl md:text-7xl lg:text-8xl text-center mb-8 md:mb-16 font-dancing-script'
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 30, rotateZ: -5 }}
+          animate={inView ? { opacity: 1, y: 0, rotateZ: 0 } : { opacity: 0, y: 30, rotateZ: -5 }}
+          transition={{
+            duration: 0.8,
+            type: 'spring',
+            stiffness: 80,
+            damping: 10
+          }}
         >
           {t('title')}
         </motion.h2>

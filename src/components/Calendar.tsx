@@ -57,16 +57,19 @@ export default function Calendar() {
       ref={ref}
       className='px-4 md:pt-15 relative overflow-hidden bg-paper'
     >
-      <div className='max-w-2xl mx-auto text-center relative z-10'>
+      <div className='max-w-xl mx-auto text-center relative z-10'>
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, rotateX: 90 }}
+          animate={
+            inView ? { opacity: 1, rotateX: 0 } : { opacity: 0, rotateX: 90 }
+          }
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          style={{ transformStyle: 'preserve-3d' }}
         >
           {/* Year and Month */}
           <div className='mb-8 md:mb-12 relative'>
-            <h2 className='text-8xl md:text-5xl mb-4'>2026</h2>
-            <p className='text-6xl md:text-7xl absolute top-20 left-1/2 -translate-x-1/2 font-high-spirited'>
+            <h2 className='text-8xl md:text-8xl mb-4 font-ergisa'>2026</h2>
+            <p className='text-6xl md:text-7xl absolute top-15 left-1/2 -translate-x-1/2 font-high-spirited'>
               January
             </p>
           </div>
@@ -84,21 +87,49 @@ export default function Calendar() {
           </div>
 
           {/* Calendar Grid */}
-          <div className='grid grid-cols-7 mb-8'>
+          <motion.div
+            className='grid grid-cols-7 mb-8'
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.03,
+                },
+              },
+            }}
+            initial='hidden'
+            animate={inView ? 'visible' : 'hidden'}
+          >
             {calendarDays.map((day, index) => (
-              <div
+              <motion.div
                 key={index}
                 className='aspect-square flex items-center justify-center text-base md:text-lg relative'
+                variants={{
+                  hidden: { opacity: 0, rotateY: -90 },
+                  visible: {
+                    opacity: 1,
+                    rotateY: 0,
+                    transition: {
+                      duration: 0.4,
+                      ease: 'easeOut',
+                    },
+                  },
+                }}
               >
                 {day && (
                   <>
                     {day === weddingDay ? (
                       <motion.div
                         className='absolute inset-0 flex items-center justify-center font-bold'
-                        initial={{ scale: 0 }}
-                        animate={inView ? { scale: 1 } : { scale: 0 }}
+                        initial={{ scale: 0, rotate: -180 }}
+                        animate={
+                          inView
+                            ? { scale: 1, rotate: 0 }
+                            : { scale: 0, rotate: -180 }
+                        }
                         transition={{
-                          delay: 0.5,
+                          delay: 0.5 + index * 0.03,
                           type: 'spring',
                           stiffness: 200,
                         }}
@@ -111,7 +142,7 @@ export default function Calendar() {
                             style={{
                               fill: 'transparent',
                               stroke: 'var(--theme-primary)',
-                              strokeWidth: '2',
+                              strokeWidth: '5',
                             }}
                             animate={{ scale: [1, 1.1, 1] }}
                             transition={{
@@ -122,7 +153,7 @@ export default function Calendar() {
                           >
                             <path d='M50,90 C50,90 10,60 10,35 C10,20 20,10 30,10 C40,10 45,20 50,25 C55,20 60,10 70,10 C80,10 90,20 90,35 C90,60 50,90 50,90 Z' />
                           </motion.svg>
-                          <span className='absolute inset-0 flex items-center justify-center text-theme-primary-darker font-bold text-sm md:text-base'>
+                          <span className='absolute inset-0 flex items-center justify-center text-theme-primary font-bold text-sm md:text-base'>
                             {day}
                           </span>
                         </div>
@@ -132,9 +163,9 @@ export default function Calendar() {
                     )}
                   </>
                 )}
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </motion.div>
       </div>
       <Countdown />
