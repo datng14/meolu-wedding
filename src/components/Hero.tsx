@@ -43,7 +43,11 @@ export default function Hero() {
         <motion.div
           className='absolute inset-0'
           initial={{ scale: 1.2, opacity: 0, rotate: -2 }}
-          animate={inView ? { scale: 1, opacity: 1, rotate: 0 } : { scale: 1.2, opacity: 0, rotate: -2 }}
+          animate={
+            inView
+              ? { scale: 1, opacity: 1, rotate: 0 }
+              : { scale: 1.2, opacity: 0, rotate: -2 }
+          }
           transition={{ duration: 1.5, ease: 'easeOut' }}
         >
           <Image
@@ -68,21 +72,21 @@ export default function Hero() {
         >
           <div className='max-w-4xl mx-auto text-center'>
             <motion.div
-              className='text-6xl md:text-7xl lg:text-8xl font-high-spirited'
+              className='text-4xl md:text-5xl lg:text-6xl font-dancing-script mb-4'
               style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.5)' }}
               variants={itemVariants}
             >
               {t('saveOurDate')}
             </motion.div>
             <motion.h1
-              className='text-3xl md:text-5xl lg:text-6xl font-light tracking-wide mb-4 md:mb-6'
+              className='text-3xl md:text-5xl lg:text-6xl font-light tracking-wide mb-4 md:mb-4'
               style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.5)' }}
               variants={itemVariants}
             >
               {t('coupleNames')}
             </motion.h1>
             <motion.p
-              className='text-2xl md:text-3xl lg:text-4xl font-light'
+              className='text-xl md:text-2xl lg:text-3xl font-ergisa'
               style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.5)' }}
               variants={itemVariants}
             >
