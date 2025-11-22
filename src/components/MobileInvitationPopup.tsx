@@ -175,32 +175,6 @@ export default function MobileInvitationPopup() {
                 <div className='text-xl font-semibold'>{t('date')}</div>
               </motion.div>
 
-              {/* Divider */}
-              <motion.div
-                className='flex items-center justify-center mb-6'
-                custom={5}
-                variants={contentVariants}
-                initial='hidden'
-                animate='visible'
-              >
-                <div className='flex-1 h-px bg-gray-300 max-w-[100px]'></div>
-                <div className='mx-4 text-xs uppercase tracking-widest'>
-                  {t('inviteTo')}
-                </div>
-                <div className='flex-1 h-px bg-gray-300 max-w-[100px]'></div>
-              </motion.div>
-
-              {/* Guest Name */}
-              <motion.div
-                className='text-center mb-8'
-                custom={6}
-                variants={contentVariants}
-                initial='hidden'
-                animate='visible'
-              >
-                <h3 className='text-2xl font-bold'>{t('guestName')}</h3>
-              </motion.div>
-
               {/* Button */}
               <motion.button
                 onClick={handleClose}
