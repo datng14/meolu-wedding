@@ -127,12 +127,16 @@ export default function Guestbook() {
         <motion.h2
           className='text-5xl md:text-6xl lg:text-7xl text-center mb-6 md:mb-8 font-dancing-script'
           initial={{ opacity: 0, y: -30, scale: 0.9 }}
-          animate={inView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: -30, scale: 0.9 }}
+          animate={
+            inView
+              ? { opacity: 1, y: 0, scale: 1 }
+              : { opacity: 0, y: -30, scale: 0.9 }
+          }
           transition={{
             duration: 0.8,
             type: 'spring',
             stiffness: 120,
-            damping: 10
+            damping: 10,
           }}
         >
           {t('title')}
@@ -151,7 +155,20 @@ export default function Guestbook() {
           onSubmit={handleSubmit}
           className='rounded-lg shadow-lg p-6 md:p-8 mb-8 md:mb-12'
           style={{ backgroundColor: 'var(--theme-primary-light)' }}
-          variants={cardVariants}
+          variants={{
+            hidden: { opacity: 0, y: 50, rotate: -5 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              rotate: 0,
+              transition: {
+                duration: 0.8,
+                type: 'spring',
+                stiffness: 100,
+                damping: 12,
+              },
+            },
+          }}
           initial='hidden'
           animate={inView ? 'visible' : 'hidden'}
         >
