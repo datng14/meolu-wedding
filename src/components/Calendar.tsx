@@ -2,9 +2,11 @@
 
 import Countdown from '@/components/Countdown';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import { useInView } from 'react-intersection-observer';
 
 export default function Calendar() {
+  const t = useTranslations('calendar');
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -70,7 +72,7 @@ export default function Calendar() {
           <div className='mb-8 md:mb-12 relative'>
             <h2 className='text-8xl md:text-8xl mb-4 font-ergisa'>2026</h2>
             <p className='text-6xl md:text-7xl absolute top-15 left-1/2 -translate-x-1/2 font-high-spirited'>
-              January
+              {t('month')}
             </p>
           </div>
 
@@ -81,7 +83,7 @@ export default function Calendar() {
                 key={day}
                 className='text-xs md:text-sm font-semibold uppercase'
               >
-                {day}
+                {t('daysOfWeek.' + day)}
               </div>
             ))}
           </div>

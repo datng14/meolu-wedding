@@ -74,19 +74,19 @@ export default function Invitation() {
           </motion.div>
 
           <div className='y-12'>
-            <h2 className='text-2xl md:text-3xl lg:text-4xl text-theme-primary-dark uppercase'>
+            <h2 className='text-xl md:text-2xl lg:text-3xl text-theme-primary-dark uppercase'>
               {tCouple('groomName')}
             </h2>
             <p className='text-2xl md:text-3xl lg:text-4xl font-dancing-script'>
               &
             </p>
-            <h2 className='text-2xl md:text-3xl lg:text-4xl text-theme-primary-dark uppercase'>
+            <h2 className='text-xl md:text-2xl lg:text-3xl text-theme-primary-dark uppercase'>
               {tCouple('brideName')}
             </h2>
           </div>
 
           {/* Date and Time */}
-          <div className='flex justify-center items-center gap-4 text-lg md:text-lg lg:text-xl'>
+          <div className='flex justify-center items-center gap-4 text-4xl md:text-5xl lg:text-6xl'>
             <div className='flex justify-center items-center gap-4'>
               <p className=''>18:00</p>
               <span>|</span>
@@ -99,7 +99,6 @@ export default function Invitation() {
             <span>|</span>
             <p>{t('dayOfWeek')}</p>
           </div>
-          <p className='text-base md:text-lg lg:text-xl'>{t('lunarDate')}</p>
         </motion.div>
       </div>
     </section>

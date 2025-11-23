@@ -1,12 +1,14 @@
 import Calendar from '@/components/Calendar';
 import CoupleInfo from '@/components/CoupleInfo';
 import Gallery from '@/components/Gallery';
+import GiftIcon from '@/components/GiftIcon';
 import Guestbook from '@/components/Guestbook';
 import Hero from '@/components/Hero';
 import Invitation from '@/components/Invitation';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import Location from '@/components/Location';
 import MobileInvitationPopup from '@/components/MobileInvitationPopup';
+import RSVP from '@/components/RSVP';
 import Timeline from '@/components/Timeline';
 
 export default function Home() {
@@ -21,8 +23,9 @@ export default function Home() {
       <Calendar />
       <Timeline />
       <Gallery />
-      {/* <RSVP /> */}
+      <RSVP />
       <Guestbook />
+      <GiftIcon />
     </main>
   );
 }

@@ -13,20 +13,12 @@ export default function Location() {
   });
 
   const handleAddToCalendar = () => {
-    const startDate = `${tInvitation('date').replace(/-/g, '')}T${tInvitation(
-      'time'
-    ).replace(':', '')}00`;
-    const endDate = `${tInvitation('date').replace(/-/g, '')}T${tInvitation(
-      'time'
-    ).replace(':', '')}00`;
-    const details = `Join us for our wedding celebration at ${tInvitation(
-      'venue'
-    )}`;
-
     const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
-      tInvitation('title')
-    )}&dates=${startDate}/${endDate}&details=${encodeURIComponent(
-      details
+      tInvitation('addToCalendarTitle')
+    )}&dates=${tInvitation('addToCalendarStartDate')}/${tInvitation(
+      'addToCalendarEndDate'
+    )}&details=${encodeURIComponent(
+      tInvitation('addToCalendarDescription')
     )}&location=${encodeURIComponent(
       tInvitation('mapAddress')
     )}&sf=true&output=xml`;
@@ -59,9 +51,11 @@ export default function Location() {
         </motion.h2>
 
         {/* Venue */}
-        <div className='space-y-2 text-center text-base md:text-base lg:text-lg'>
-          <p className='font-bold'>{tInvitation('venue')}</p>
-          <p>{tInvitation('lobby')}</p>
+        <div className='space-y-2 text-center text-xl md:text-2xl lg:text-3xl'>
+          <p className='font-bold whitespace-pre-line'>
+            {tInvitation('venue')}
+          </p>
+          <p className='font-bold'>{tInvitation('lobby')}</p>
           <p>
             {t('address')}: {tInvitation('address')}
           </p>
@@ -106,7 +100,7 @@ export default function Location() {
           }}
         >
           <iframe
-            src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15676.52002126144!2d106.66060347641935!3d10.80135360716894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752928af1513fb%3A0xd2651b40d27136ec!2sPavillon%20Restaurant!5e0!3m2!1sen!2s!4v1763791138834!5m2!1sen!2s'
+            src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3919.1295329980894!2d106.6698503!3d10.8013898!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752928b68fbc3f%3A0xc58bea5686708420!2zVHJ1bmcgVMOibSBI4buZaSBOZ2jhu4sgJiBUaeG7h2MgQ8aw4bubaSBQYXZpbGxvbiBUw6JuIFPGoW4gTmjhuqV0!5e0!3m2!1sen!2s!4v1763866738443!5m2!1sen!2s'
             width='100%'
             height='100%'
             loading='lazy'

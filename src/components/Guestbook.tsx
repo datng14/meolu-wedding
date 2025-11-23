@@ -90,21 +90,6 @@ export default function Guestbook() {
     }));
   };
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 80, rotate: -5 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      rotate: 0,
-      transition: {
-        duration: 0.8,
-        type: 'spring',
-        stiffness: 100,
-        damping: 12,
-      },
-    },
-  };
-
   const messageVariants = {
     hidden: { opacity: 0, x: -50, rotate: -3 },
     visible: {
@@ -151,84 +136,168 @@ export default function Guestbook() {
         </motion.p>
 
         {/* Form */}
-        <motion.form
-          onSubmit={handleSubmit}
-          className='rounded-lg shadow-lg p-6 md:p-8 mb-8 md:mb-12'
-          style={{ backgroundColor: 'var(--theme-primary-light)' }}
-          variants={{
-            hidden: { opacity: 0, y: 50, rotate: -5 },
-            visible: {
-              opacity: 1,
-              y: 0,
-              rotate: 0,
-              transition: {
-                duration: 0.8,
-                type: 'spring',
-                stiffness: 100,
-                damping: 12,
+        {submitStatus === 'success' ? (
+          <motion.div
+            className='rounded-lg shadow-lg p-6 md:p-8 mb-8 md:mb-12'
+            style={{ backgroundColor: 'var(--theme-primary-light)' }}
+            variants={{
+              hidden: { opacity: 0, y: 50, rotate: -5 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                rotate: 0,
+                transition: {
+                  duration: 0.8,
+                  type: 'spring',
+                  stiffness: 100,
+                  damping: 12,
+                },
               },
-            },
-          }}
-          initial='hidden'
-          animate={inView ? 'visible' : 'hidden'}
-        >
-          <div className='space-y-6'>
-            <div>
-              <input
-                type='text'
-                name='name'
-                required
-                value={formData.name}
-                onChange={handleChange}
-                placeholder={t('name')}
-                className='w-full px-3 py-2.5 md:px-4 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg  bg-white placeholder:text-theme-primary text-theme-primary-darker'
-              />
-            </div>
-
-            <div>
-              <textarea
-                name='message'
-                rows={4}
-                required
-                value={formData.message}
-                onChange={handleChange}
-                placeholder={t('messagePlaceholder')}
-                className='w-full px-3 py-2.5 md:px-4 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg bg-white placeholder:text-theme-primary text-theme-primary-darker'
-              />
-            </div>
-
-            {submitStatus === 'success' && (
+            }}
+            initial='hidden'
+            animate={inView ? 'visible' : 'hidden'}
+          >
+            <motion.div
+              className='flex flex-col items-center justify-center space-y-4 py-8'
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+            >
               <motion.div
-                className='px-4 py-3 rounded-lg border text-white bg-theme-primary-lighter border-none'
-                initial={{ opacity: 0, y: -10 }}
+                className='w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center'
+                style={{ backgroundColor: 'var(--theme-primary)' }}
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
+              >
+                <svg
+                  className='w-8 h-8 md:w-10 md:h-10 text-white'
+                  fill='none'
+                  stroke='currentColor'
+                  viewBox='0 0 24 24'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='M5 13l4 4L19 7'
+                  />
+                </svg>
+              </motion.div>
+              <motion.h3
+                className='text-2xl md:text-3xl font-medium text-white'
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
               >
                 {t('thankYou')}
-              </motion.div>
-            )}
+              </motion.h3>
+              <motion.p
+                className='text-base md:text-lg text-white/90'
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4 }}
+              >
+                {t('successMessage')}
+              </motion.p>
+            </motion.div>
+          </motion.div>
+        ) : submitStatus === 'error' ? (
+          <motion.div
+            className='rounded-lg shadow-lg p-6 md:p-8 mb-8 md:mb-12'
+            style={{ backgroundColor: 'var(--theme-primary-light)' }}
+            variants={{
+              hidden: { opacity: 0, y: 50, rotate: -5 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                rotate: 0,
+                transition: {
+                  duration: 0.8,
+                  type: 'spring',
+                  stiffness: 100,
+                  damping: 12,
+                },
+              },
+            }}
+            initial='hidden'
+            animate={inView ? 'visible' : 'hidden'}
+          >
+            <motion.div
+              className='bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-center'
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+            >
+              <p className='font-medium mb-2'>{t('error')}</p>
+              <button
+                onClick={() => setSubmitStatus('idle')}
+                className='text-sm underline hover:no-underline'
+              >
+                {t('tryAgain')}
+              </button>
+            </motion.div>
+          </motion.div>
+        ) : (
+          <motion.form
+            onSubmit={handleSubmit}
+            className='rounded-lg shadow-lg p-6 md:p-8 mb-8 md:mb-12'
+            style={{ backgroundColor: 'var(--theme-primary-light)' }}
+            variants={{
+              hidden: { opacity: 0, y: 50, rotate: -5 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                rotate: 0,
+                transition: {
+                  duration: 0.8,
+                  type: 'spring',
+                  stiffness: 100,
+                  damping: 12,
+                },
+              },
+            }}
+            initial='hidden'
+            animate={inView ? 'visible' : 'hidden'}
+          >
+            <div className='space-y-6'>
+              <div>
+                <input
+                  type='text'
+                  name='name'
+                  required
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder={t('name')}
+                  className='w-full px-3 py-2.5 md:px-4 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg  bg-white placeholder:text-theme-primary text-theme-primary-darker'
+                />
+              </div>
 
-            {submitStatus === 'error' && (
-              <motion.div
-                className='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg'
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-              >
-                {t('error')}
-              </motion.div>
-            )}
-            <div className='flex justify-center'>
-              <motion.button
-                type='submit'
-                disabled={isSubmitting}
-                className='px-6 py-3 md:px-8 md:py-4 text-sm md:text-base rounded-full font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-white bg-theme-primary cursor-pointer'
-                whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
-                whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-              >
-                {isSubmitting ? tCommon('loading') : t('submit')}
-              </motion.button>
+              <div>
+                <textarea
+                  name='message'
+                  rows={4}
+                  required
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder={t('messagePlaceholder')}
+                  className='w-full px-3 py-2.5 md:px-4 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg bg-white placeholder:text-theme-primary text-theme-primary-darker'
+                />
+              </div>
+
+              <div className='flex justify-center'>
+                <motion.button
+                  type='submit'
+                  disabled={isSubmitting}
+                  className='px-6 py-3 md:px-8 md:py-4 text-sm md:text-base rounded-full font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-white bg-theme-primary cursor-pointer'
+                  whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                  whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+                >
+                  {isSubmitting ? tCommon('loading') : t('submit')}
+                </motion.button>
+              </div>
             </div>
-          </div>
-        </motion.form>
+          </motion.form>
+        )}
 
         {/* Messages */}
         <div className='space-y-6'>

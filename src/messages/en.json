@@ -25,16 +25,18 @@
     "title": "We warmly invite you",
     "subtitle": "to attend our wedding party",
     "time": "At",
-    "lunarDate": "(Lunar calendar: December 26th, Year of the Snake)",
-    "venue": "PAVILLON TAN SON NHAT",
+    "venue": "TRUNG TÂM HỘI NGHỊ & TIỆC CƯỚI\nPAVILLON TÂN SƠN NHẤT",
     "lobby": "Lobby: Amber",
     "address": "202 Hoang Van Thu St, Ward Duc Nhuan, Ho Chi Minh City, Vietnam",
     "mapAddress": "Pavillon Tân Sơn Nhất, 202 Hoang Van Thu St, Ward 9, Phu Nhuan, HCMC, Vietnam",
-    "groomName": "Tuan Dat & Anh Thao",
-    "brideName": "",
-    "dayOfWeek": "SATURDAY",
+    "date": "24-01-2026",
+    "dayOfWeek": "Saturday",
     "location": "Venue",
-    "addToCalendar": "Add to Calendar"
+    "addToCalendar": "Add to Calendar",
+    "addToCalendarTitle": "Tuan Dat & Anh Thao's wedding",
+    "addToCalendarDescription": "Join us for our wedding celebration at Pavillon Tân Sơn Nhất",
+    "addToCalendarStartDate": "20260124T180000",
+    "addToCalendarEndDate": "20260124T210000"
   },
   "couple": {
     "title": "Bride & Groom",
@@ -44,6 +46,18 @@
     "groomName": "Nguyen Tuan Dat (Melvin)",
     "name": "Name",
     "description": "Description"
+  },
+  "calendar": {
+    "month": "January",
+    "daysOfWeek": {
+      "MON": "MON",
+      "TUE": "TUE",
+      "WED": "WED",
+      "THU": "THU",
+      "FRI": "FRI",
+      "SAT": "SAT",
+      "SUN": "SUN"
+    }
   },
   "countdown": {
     "title": "Countdown to the big day",
@@ -83,12 +97,17 @@
     "attending": "Will you be attending?",
     "yes": "Yes, I will attend",
     "no": "No, I'm sorry I can't attend",
+    "areYouVegan": "Are you a vegan?",
+    "yesVegan": "Yes, I'm a vegan",
+    "noVegan": "No, I'm not a vegan",
     "guests": "Number of guests",
     "message": "Note",
     "messagePlaceholder": "Please let us know about vegan/vegetarian preferences or other special requests",
     "submit": "Submit RSVP",
     "thankYou": "Thank you for your RSVP!",
-    "error": "An error occurred. Please try again."
+    "successMessage": "We're looking forward to celebrating with you!",
+    "error": "An error occurred. Please try again.",
+    "tryAgain": "Try again"
   },
   "guestbook": {
     "title": "Guestbook",
@@ -97,7 +116,9 @@
     "messagePlaceholder": "Write your message (*)",
     "submit": "Send message",
     "thankYou": "Thank you for your message!",
+    "successMessage": "Your message has been sent successfully!",
     "error": "An error occurred. Please try again.",
+    "tryAgain": "Try again",
     "noMessages": "No messages yet. Be the first!"
   },
   "popup": {
@@ -107,5 +128,28 @@
     "inviteTo": "INVITE TO",
     "guestName": "Anh Success",
     "viewInvitation": "VIEW INVITATION"
+  },
+  "admin": {
+    "title": "RSVP Admin Dashboard",
+    "loading": "Loading...",
+    "totalRSVPs": "Total RSVPs",
+    "attending": "Attending",
+    "notAttending": "Not Attending",
+    "totalGuests": "Total Guests",
+    "vegan": "Vegan",
+    "searchPlaceholder": "Search by name, phone, or message...",
+    "all": "All",
+    "name": "Name",
+    "phone": "Phone",
+    "guests": "Guests",
+    "message": "Message",
+    "submittedAt": "Submitted At",
+    "yes": "Yes",
+    "no": "No",
+    "noRSVPs": "No RSVPs found"
+  },
+  "gift": {
+    "title": "Lucky Money",
+    "description": "Scan the QR code to send your lucky money gift"
   }
 }

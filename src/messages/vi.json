@@ -25,16 +25,18 @@
     "title": "TRÂN TRỌNG KÍNH MỜI",
     "subtitle": "Lễ thành hôn của chúng tôi",
     "time": "Vào lúc",
-    "lunarDate": "(Tức ngày 26 tháng 12 năm Ất Tỵ)",
-    "venue": "TRUNG TÂM HỘI NGHỊ & TIỆC CƯỚI PAVILLON TÂN SƠN NHẤT",
+    "venue": "TRUNG TÂM HỘI NGHỊ & TIỆC CƯỚI\nPAVILLON TÂN SƠN NHẤT",
     "lobby": "Sảnh Amber",
     "address": "202 Đ. Hoàng Văn Thụ, Phường Đức Nhuận, TP. HCM, Việt Nam",
     "mapAddress": "Pavillon Restaurant, 202 Đ. Hoàng Văn Thụ, Phường 9, Phú Nhuận, Thành phố Hồ Chí Minh 700000, Vietnam",
-    "groomName": "Tuan Dat & Anh Thao",
-    "brideName": "",
+    "date": "24-01-2026",
     "dayOfWeek": "Thứ bảy",
     "location": "Địa điểm",
-    "addToCalendar": "Thêm vào lịch"
+    "addToCalendar": "Thêm vào lịch",
+    "addToCalendarTitle": "Lễ thành hôn của Tuấn Đạt & Ánh Thảo",
+    "addToCalendarDescription": "Tham dự lễ thành hôn của Tuấn Đạt & Ánh Thảo tại Pavillon Tân Sơn Nhất",
+    "addToCalendarStartDate": "20260124T180000",
+    "addToCalendarEndDate": "20260124T210000"
   },
   "couple": {
     "title": "Cô dâu & Chú rể",
@@ -44,6 +46,18 @@
     "groomName": "Nguyễn Tuấn Đạt",
     "name": "Tên",
     "description": "Mô tả"
+  },
+  "calendar": {
+    "month": "Tháng MỘT",
+    "daysOfWeek": {
+      "MON": "T2",
+      "TUE": "T3",
+      "WED": "T4",
+      "THU": "T5",
+      "FRI": "T6",
+      "SAT": "T7",
+      "SUN": "CN"
+    }
   },
   "countdown": {
     "title": "Đếm ngược đến ngày cưới",
@@ -83,12 +97,17 @@
     "attending": "Bạn có tham dự không?",
     "yes": "Có, tôi sẽ tham dự",
     "no": "Không, tôi rất tiếc không thể tham dự",
+    "areYouVegan": "Bạn có phải là người ăn chay?",
+    "yesVegan": "Có, tôi ăn chay",
+    "noVegan": "Không, tôi không ăn chay",
     "guests": "Số lượng khách",
     "message": "Lưu ý",
     "messagePlaceholder": "Nhập lưu ý của bạn liên quan đến món chay nếu có nhu cầu hoặc liên quan đến khách mời đi cùng...",
     "submit": "Gửi xác nhận",
     "thankYou": "Cảm ơn bạn đã xác nhận!",
-    "error": "Đã xảy ra lỗi. Vui lòng thử lại."
+    "successMessage": "Chúng tôi rất mong được đón tiếp bạn!",
+    "error": "Đã xảy ra lỗi. Vui lòng thử lại.",
+    "tryAgain": "Thử lại"
   },
   "guestbook": {
     "title": "Lời chúc mừng",
@@ -97,7 +116,9 @@
     "messagePlaceholder": "Viết lời chúc của bạn (*)",
     "submit": "Gửi lời chúc",
     "thankYou": "Cảm ơn bạn đã gửi lời chúc!",
+    "successMessage": "Lời chúc của bạn đã được gửi thành công!",
     "error": "Đã xảy ra lỗi. Vui lòng thử lại.",
+    "tryAgain": "Thử lại",
     "noMessages": "Chưa có lời chúc nào. Hãy là người đầu tiên!"
   },
   "popup": {
@@ -107,5 +128,28 @@
     "inviteTo": "GỬI LỜI MỜI TỚI",
     "guestName": "Anh Success",
     "viewInvitation": "XEM THIỆP NGAY"
+  },
+  "admin": {
+    "title": "Bảng điều khiển RSVP",
+    "loading": "Đang tải...",
+    "totalRSVPs": "Tổng số RSVP",
+    "attending": "Tham dự",
+    "notAttending": "Không tham dự",
+    "totalGuests": "Tổng số khách",
+    "vegan": "Ăn chay",
+    "searchPlaceholder": "Tìm kiếm theo tên, số điện thoại hoặc tin nhắn...",
+    "all": "Tất cả",
+    "name": "Tên",
+    "phone": "Số điện thoại",
+    "guests": "Số khách",
+    "message": "Tin nhắn",
+    "submittedAt": "Thời gian gửi",
+    "yes": "Có",
+    "no": "Không",
+    "noRSVPs": "Không tìm thấy RSVP nào"
+  },
+  "gift": {
+    "title": "Lì Xì",
+    "description": "Quét mã QR để gửi lì xì chúc mừng"
   }
 }
