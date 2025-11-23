@@ -18,7 +18,6 @@ export default function RSVP() {
 
   const [formData, setFormData] = useState<RSVPForm>({
     name: '',
-    phone: '',
     vegan: 'no',
     attending: 'yes',
     guests: 1,
@@ -46,7 +45,6 @@ export default function RSVP() {
       setSubmitStatus('success');
       setFormData({
         name: '',
-        phone: '',
         vegan: 'no',
         attending: 'yes',
         guests: 1,
@@ -208,32 +206,6 @@ export default function RSVP() {
                   name='name'
                   required
                   value={formData.name}
-                  onChange={handleChange}
-                  className='w-full px-3 py-2.5 md:px-4 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent'
-                  onFocus={(e) => {
-                    e.currentTarget.style.borderColor = 'var(--theme-primary)';
-                    e.currentTarget.style.boxShadow =
-                      '0 0 0 2px var(--theme-primary-light)';
-                  }}
-                  onBlur={(e) => {
-                    e.currentTarget.style.borderColor = '';
-                    e.currentTarget.style.boxShadow = '';
-                  }}
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor='phone'
-                  className='block font-medium mb-2 text-base md:text-lg'
-                >
-                  {t('phone')}
-                </label>
-                <input
-                  type='tel'
-                  id='phone'
-                  name='phone'
-                  value={formData.phone}
                   onChange={handleChange}
                   className='w-full px-3 py-2.5 md:px-4 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent'
                   onFocus={(e) => {

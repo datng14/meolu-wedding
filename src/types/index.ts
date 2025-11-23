@@ -1,6 +1,5 @@
 export interface RSVPForm {
   name: string;
-  phone: string;
   vegan: 'yes' | 'no';
   attending: 'yes' | 'no';
   guests?: number;

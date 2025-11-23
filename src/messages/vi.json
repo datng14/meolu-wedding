@@ -48,7 +48,7 @@
     "description": "Mô tả"
   },
   "calendar": {
-    "month": "Tháng MỘT",
+    "month": "Tháng 1",
     "daysOfWeek": {
       "MON": "T2",
       "TUE": "T3",
@@ -149,7 +149,7 @@
     "noRSVPs": "Không tìm thấy RSVP nào"
   },
   "gift": {
-    "title": "Lì Xì",
-    "description": "Quét mã QR để gửi lì xì chúc mừng"
+    "title": "Hộp mừng cưới",
+    "description": "Dành cho những người bạn không thể đến chung vui, bạn có thể dùng mã QR bên dưới để gửi lời chúc — hoàn toàn tuỳ ý"
   }
 }
