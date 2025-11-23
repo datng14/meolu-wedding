@@ -47,6 +47,11 @@
     "name": "Tên",
     "description": "Mô tả"
   },
+  "ourStory": {
+    "title": "Chuyện chúng mình",
+    "description": "Hành trình tình yêu đẹp của chúng mình",
+    "videoNotSupported": "Trình duyệt của bạn không hỗ trợ thẻ video."
+  },
   "calendar": {
     "month": "Tháng 1",
     "daysOfWeek": {

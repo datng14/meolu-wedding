@@ -47,6 +47,11 @@
     "name": "Name",
     "description": "Description"
   },
+  "ourStory": {
+    "title": "Our Story",
+    "description": "A beautiful journey of love and togetherness",
+    "videoNotSupported": "Your browser does not support the video tag."
+  },
   "calendar": {
     "month": "January",
     "daysOfWeek": {

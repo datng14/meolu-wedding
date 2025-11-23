@@ -60,7 +60,7 @@ export default function Timeline() {
       style={{
         backgroundImage: 'url(/images/album-7.jpg)',
         backgroundSize: 'cover',
-        backgroundPosition: '70% 100%',
+        backgroundPosition: '100% 0%',
         backgroundAttachment: 'fixed',
         backgroundRepeat: 'no-repeat',
       }}
@@ -72,10 +72,14 @@ export default function Timeline() {
         <motion.h2
           className='text-5xl md:text-6xl lg:text-7xl text-center mb-12 md:mb-20 text-white font-dancing-script'
           initial={{ opacity: 0, y: -50, rotateX: -90 }}
-          animate={inView ? { opacity: 1, y: 0, rotateX: 0 } : { opacity: 0, y: -50, rotateX: -90 }}
+          animate={
+            inView
+              ? { opacity: 1, y: 0, rotateX: 0 }
+              : { opacity: 0, y: -50, rotateX: -90 }
+          }
           transition={{
             duration: 0.8,
-            ease: 'easeOut'
+            ease: 'easeOut',
           }}
           style={{ transformStyle: 'preserve-3d' }}
         >

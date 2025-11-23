@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
     turbopackUseSystemTlsCerts: true,
   },
   images: {
-    qualities: [75, 85, 90],
+    qualities: [75, 85, 90, 100],
   },
 };
 

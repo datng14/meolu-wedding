@@ -8,6 +8,7 @@ import Invitation from '@/components/Invitation';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import Location from '@/components/Location';
 import MobileInvitationPopup from '@/components/MobileInvitationPopup';
+import OurStory from '@/components/OurStory';
 import RSVP from '@/components/RSVP';
 import Timeline from '@/components/Timeline';
 
@@ -18,6 +19,7 @@ export default function Home() {
       <LanguageSwitcher />
       <Hero />
       <CoupleInfo />
+      <OurStory />
       <Invitation />
       <Location />
       <Calendar />

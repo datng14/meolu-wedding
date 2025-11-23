@@ -109,6 +109,7 @@ export default function CoupleInfo() {
           height={200}
           className='absolute top-0 right-0 w-full h-auto md:w-full'
           quality={100}
+          loading='eager'
         />
       </div>
 

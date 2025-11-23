@@ -48,6 +48,7 @@ export default function Invitation() {
                 alt='Signature Background'
                 fill
                 className='object-contain'
+                quality={100}
               />
               <div className='relative inset-0 flex items-center justify-center'>
                 <div className='text-5xl md:text-6xl lg:text-7xl relative h-20 w-20'>
