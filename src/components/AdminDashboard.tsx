@@ -2,12 +2,7 @@
 
 import { db } from '@/lib/firebase';
 import { RSVP } from '@/types';
-import {
-  collection,
-  onSnapshot,
-  orderBy,
-  query,
-} from 'firebase/firestore';
+import { collection, onSnapshot, orderBy, query } from 'firebase/firestore';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 
@@ -19,10 +14,7 @@ export default function AdminDashboard() {
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    const q = query(
-      collection(db, 'rsvps'),
-      orderBy('submittedAt', 'desc')
-    );
+    const q = query(collection(db, 'rsvps'), orderBy('submittedAt', 'desc'));
     const unsubscribe = onSnapshot(q, (snapshot) => {
       const rsvpData: RSVP[] = [];
       snapshot.forEach((doc) => {
@@ -47,7 +39,6 @@ export default function AdminDashboard() {
     const matchesSearch =
       searchTerm === '' ||
       rsvp.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      rsvp.phone?.toLowerCase().includes(searchTerm.toLowerCase()) ||
       rsvp.message?.toLowerCase().includes(searchTerm.toLowerCase());
     return matchesFilter && matchesSearch;
   });
@@ -73,14 +64,14 @@ export default function AdminDashboard() {
   return (
     <div className='min-h-screen bg-gray-50 py-8 px-4'>
       <div className='max-w-7xl mx-auto'>
-        <h1 className='text-4xl font-bold mb-8 text-center'>
-          {t('title')}
-        </h1>
+        <h1 className='text-4xl font-bold mb-8 text-center'>{t('title')}</h1>
 
         {/* Statistics */}
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-8'>
           <div className='bg-white rounded-lg shadow p-6'>
-            <div className='text-3xl font-bold text-blue-600'>{stats.total}</div>
+            <div className='text-3xl font-bold text-blue-600'>
+              {stats.total}
+            </div>
             <div className='text-gray-600 mt-2'>{t('totalRSVPs')}</div>
           </div>
           <div className='bg-white rounded-lg shadow p-6'>
@@ -204,11 +195,6 @@ export default function AdminDashboard() {
                         </div>
                       </td>
                       <td className='px-6 py-4 whitespace-nowrap'>
-                        <div className='text-sm text-gray-500'>
-                          {rsvp.phone || '-'}
-                        </div>
-                      </td>
-                      <td className='px-6 py-4 whitespace-nowrap'>
                         <span
                           className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
                             rsvp.attending === 'yes'
@@ -253,4 +239,3 @@ export default function AdminDashboard() {
     </div>
   );
 }
-
