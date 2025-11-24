@@ -11,11 +11,14 @@ import MobileInvitationPopup from '@/components/MobileInvitationPopup';
 import OurStory from '@/components/OurStory';
 import RSVP from '@/components/RSVP';
 import Timeline from '@/components/Timeline';
+import { Suspense } from 'react';
 
 export default function Home() {
   return (
     <main className='min-h-screen'>
-      <MobileInvitationPopup />
+      <Suspense fallback={null}>
+        <MobileInvitationPopup />
+      </Suspense>
       <LanguageSwitcher />
       <Hero />
       <CoupleInfo />

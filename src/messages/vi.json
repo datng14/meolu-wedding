@@ -153,6 +153,33 @@
     "no": "Không",
     "noRSVPs": "Không tìm thấy RSVP nào"
   },
+  "guestList": {
+    "title": "Quản lý danh sách khách mời",
+    "loading": "Đang tải...",
+    "totalGuests": "Tổng số khách",
+    "notSent": "Chưa gửi",
+    "opened": "Đã mở",
+    "addGuest": "Thêm khách mời",
+    "guestNamePlaceholder": "Nhập tên khách mời",
+    "add": "Thêm",
+    "cancel": "Hủy",
+    "searchPlaceholder": "Tìm kiếm theo tên...",
+    "name": "Tên",
+    "status": "Trạng thái",
+    "receivedAt": "Thời gian nhận",
+    "actions": "Thao tác",
+    "noGuests": "Không tìm thấy khách mời nào",
+    "save": "Lưu",
+    "copyENLink": "EN",
+    "copyVILink": "VI",
+    "delete": "Xóa",
+    "linkCopied": "Đã sao chép liên kết vào clipboard!",
+    "confirmDeleteTitle": "Xóa khách mời",
+    "confirmDelete": "Bạn có chắc chắn muốn xóa khách mời này? Hành động này không thể hoàn tác.",
+    "error": "Đã xảy ra lỗi. Vui lòng thử lại.",
+    "statusNotSent": "Chưa gửi",
+    "statusOpened": "Đã mở"
+  },
   "gift": {
     "title": "Hộp mừng cưới",
     "description": "Dành cho những người bạn không thể đến chung vui, bạn có thể dùng mã QR bên dưới để gửi lời chúc — hoàn toàn tuỳ ý"
