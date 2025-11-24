@@ -44,7 +44,7 @@ export default function Invitation() {
           >
             <div className='relative w-20 h-30 md:w-40 md:h-40'>
               <Image
-                src='/images/signature-bg.png'
+                src='/images/signature-bg.svg'
                 alt='Signature Background'
                 fill
                 className='object-contain'

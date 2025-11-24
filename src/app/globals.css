@@ -4,13 +4,13 @@
   --background: #ffffff;
   --foreground: #171717;
 
-  /* Theme Color System - Matching sample page */
-  /* Primary color from sample: rgb(78, 100, 55) */
-  --theme-primary: #4e6437;
-  --theme-primary-light: #bbc2b4b3;
+  /* Theme Color System - Rose/Magenta theme for wedding */
+  /* Primary color: #B03060 (rose/magenta) */
+  --theme-primary: #b03060;
+  --theme-primary-light: #d89bb3b3;
   /* Auto-generated theme colors from primary */
   /* These automatically adjust based on --theme-primary */
-  --theme-primary-dark: #38511f;
+  --theme-primary-dark: #8b2450;
   --theme-primary-darker: color-mix(in srgb, var(--theme-primary) 60%, black);
 
   --theme-primary-lighter: color-mix(in srgb, var(--theme-primary) 95%, white);

@@ -162,25 +162,25 @@ export default function MobileInvitationPopup() {
 
           {/* Popup */}
           <motion.div
-            className='fixed bottom-0 left-0 right-0 bg-white rounded-t-3xl z-101 max-h-[90vh] md:hidden border-t-4'
-            style={{ borderTopColor: '#cf4b2f' }}
+            className='fixed bottom-0 left-0 right-0 bg-white rounded-t-3xl z-101 max-h-[85vh] md:hidden border-t-4'
+            style={{ borderTopColor: '#B03060' }}
             variants={popupVariants}
             initial='hidden'
             animate='visible'
             exit='exit'
           >
-            <div className='p-8 pb-12'>
+            <div className='p-4 pb-6'>
               {/* Double Happiness Symbol - At top center of popup */}
               <motion.div
-                className='relative flex justify-center mb-4'
+                className='relative flex justify-center mb-2'
                 custom={0}
                 variants={contentVariants}
                 initial='hidden'
                 animate='visible'
               >
-                <div className='absolute top-[-110] left-1/2 transform -translate-x-1/2 w-40 h-40 z-100'>
+                <div className='absolute top-[-90px] left-1/2 transform -translate-x-1/2 w-24 h-24 z-100'>
                   <Image
-                    src='/images/happy.png'
+                    src='/images/happy.svg'
                     alt='Double Happiness'
                     fill
                     className='object-contain'
@@ -190,13 +190,13 @@ export default function MobileInvitationPopup() {
               </motion.div>
               {/* Couple Illustration */}
               <motion.div
-                className='flex justify-center mb-6'
+                className='flex justify-center mb-3'
                 custom={1}
                 variants={contentVariants}
                 initial='hidden'
                 animate='visible'
               >
-                <div className='relative w-70 h-70'>
+                <div className='relative w-48 h-48'>
                   <Image
                     src='/images/invitation-bg.png'
                     alt='Couple'
@@ -209,7 +209,7 @@ export default function MobileInvitationPopup() {
 
               {/* Title */}
               <motion.h2
-                className='text-center text-sm uppercase tracking-wider mb-2'
+                className='text-center text-xs uppercase tracking-wider mb-1'
                 custom={2}
                 variants={contentVariants}
                 initial='hidden'
@@ -220,27 +220,27 @@ export default function MobileInvitationPopup() {
 
               {/* Couple Names */}
               <motion.h1
-                className='text-center text-2xl mb-2 font-ergisa'
+                className='text-center text-xl mb-1'
                 custom={2}
                 variants={contentVariants}
                 initial='hidden'
                 animate='visible'
-                style={{ color: '#8B4513' }}
+                style={{ color: '#B03060' }}
               >
                 <span className='pb-1'>{t('coupleNames')}</span>
               </motion.h1>
 
               {/* Date */}
               <motion.div
-                className='text-center mb-6'
+                className='text-center mb-3'
                 custom={3}
                 variants={contentVariants}
                 initial='hidden'
                 animate='visible'
               >
                 <div
-                  className='text-lg border-b border-t border-[#8B4513] pb-1 inline-block font-semibold'
-                  style={{ color: '#8B4513' }}
+                  className='text-base border-b border-t border-[#B03060] pb-1 inline-block font-semibold'
+                  style={{ color: '#B03060' }}
                 >
                   {t('date')}
                 </div>
@@ -251,7 +251,7 @@ export default function MobileInvitationPopup() {
                 <>
                   {/* Dotted Line Separator */}
                   <motion.div
-                    className='flex justify-center mb-6'
+                    className='flex justify-center mb-3'
                     custom={4}
                     variants={contentVariants}
                     initial='hidden'
@@ -266,15 +266,18 @@ export default function MobileInvitationPopup() {
                     initial='hidden'
                     animate='visible'
                   >
-                    <div className='text-sm uppercase tracking-wider text-gray-600 mb-2'>
+                    <div className='text-xs uppercase tracking-wider text-gray-600 mb-1'>
                       {t('inviteTo')}
                     </div>
-                    <div className='text-4xl text-theme-primary-dark uppercase font-dancing-script'>
+                    <div
+                      className='text-2xl uppercase font-dancing-script'
+                      style={{ color: '#B03060' }}
+                    >
                       {guest.name}
                     </div>
                   </motion.div>
                   <motion.div
-                    className='flex justify-center mb-6'
+                    className='flex justify-center mb-3'
                     custom={5.5}
                     variants={contentVariants}
                     initial='hidden'
@@ -288,8 +291,8 @@ export default function MobileInvitationPopup() {
               <div className='flex justify-center'>
                 <motion.button
                   onClick={handleClose}
-                  className='border-2 border-[#cf4b2f] text-[#cf4b2f] px-8 py-2 rounded-full font-semibold text-sm uppercase tracking-wider transition-transform active:scale-95'
-                  style={{ color: '#cf4b2f' }}
+                  className='border-2 px-6 py-1.5 rounded-full font-semibold text-xs uppercase tracking-wider transition-transform active:scale-95'
+                  style={{ borderColor: '#B03060', color: '#B03060' }}
                   custom={6}
                   variants={contentVariants}
                   initial='hidden'
