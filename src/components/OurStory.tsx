@@ -55,11 +55,8 @@ export default function OurStory() {
         >
           {/* Title */}
           <motion.h2
-            className='text-5xl md:text-6xl lg:text-7xl text-center mb-4 md:mb-6 font-dancing-script'
+            className='text-6xl md:text-7xl lg:text-8xl text-center mb-8 md:mb-16 font-dancing-script text-theme-primary'
             variants={itemVariants}
-            style={{
-              color: 'var(--theme-primary)',
-            }}
           >
             {t('title')}
           </motion.h2>
@@ -69,12 +66,7 @@ export default function OurStory() {
             className='floral-divider mb-6 md:mb-8 text-theme-primary'
             variants={itemVariants}
           >
-            <svg
-              width='24'
-              height='24'
-              viewBox='0 0 24 24'
-              fill='none'
-            >
+            <svg width='24' height='24' viewBox='0 0 24 24' fill='none'>
               <path
                 d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'
                 fill='currentColor'
@@ -87,9 +79,6 @@ export default function OurStory() {
           <motion.p
             className='text-center text-base md:text-lg lg:text-xl mb-8 md:mb-12 max-w-3xl mx-auto font-body-serif'
             variants={itemVariants}
-            style={{
-              color: 'var(--text-dark)',
-            }}
           >
             {t('description')}
           </motion.p>
@@ -99,12 +88,13 @@ export default function OurStory() {
             className='relative w-full flex justify-center mx-auto overflow-hidden'
             variants={videoVariants}
           >
-            <div className='relative bg-gray-900 lg:w-[360px] md:w-[300px] sm:w-full max-w-full overflow-hidden'>
+            <div className='relative lg:w-[360px] md:w-[300px] sm:w-full max-w-full overflow-hidden'>
               <video
                 className='w-full h-auto object-contain block'
                 controls
                 playsInline
                 preload='metadata'
+                poster='/images/thumbnail.png'
               >
                 <source src='/videos/our-story.mp4' type='video/mp4' />
                 <p className='text-white p-4 text-center'>

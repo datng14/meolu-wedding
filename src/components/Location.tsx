@@ -37,10 +37,7 @@ export default function Location() {
     },
   };
   return (
-    <section
-      ref={ref}
-      className='p-12 md:p-20 bg-white section-transition-gradient'
-    >
+    <section ref={ref} className='pb-20 md:pb-20'>
       <div className='max-w-6xl mx-auto'>
         <motion.h2
           className='text-xl md:text-1xl lg:text-2xl text-center mb-4 md:mb-4 font-heading text-theme-primary'
@@ -60,26 +57,13 @@ export default function Location() {
           {t('title')}
         </motion.h2>
 
-        {/* Floral Divider */}
-        <motion.div
-          className='floral-divider mb-6 md:mb-8 text-theme-primary'
-          variants={itemVariants}
-        >
-          <svg width='24' height='24' viewBox='0 0 24 24' fill='none'>
-            <path
-              d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'
-              fill='currentColor'
-              opacity='0.6'
-            />
-          </svg>
-        </motion.div>
         {/* Venue */}
         <div className='space-y-2 text-center text-xl md:text-2xl lg:text-3xl font-body-serif text-dark'>
           <p className='font-bold whitespace-pre-line'>
             {tInvitation('venue')}
           </p>
           <p className='font-bold'>{tInvitation('lobby')}</p>
-          <p>
+          <p className='px-10'>
             {t('address')}: {tInvitation('address')}
           </p>
           <div className='text-center mt-6'>
@@ -109,7 +93,7 @@ export default function Location() {
         </div>
         {/* Google Map */}
         <motion.div
-          className='mt-8 md:mt-12 h-64 md:h-96 lg:h-[600px] overflow-hidden shadow-premium-lg'
+          className='mt-14 md:mt-20 h-64 md:h-96 lg:h-[600px] overflow-hidden shadow-premium-lg'
           style={{
             border: '1px solid var(--neutral-mid)',
           }}

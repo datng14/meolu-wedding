@@ -60,8 +60,7 @@ export default function Timeline() {
       style={{
         backgroundImage: 'url(/images/album-7.jpg)',
         backgroundSize: 'cover',
-        backgroundPosition: '100% 20%',
-        backgroundAttachment: 'fixed',
+        backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
       }}
     >
@@ -99,7 +98,7 @@ export default function Timeline() {
               <div className='flex items-center justify-center gap-3 md:gap-6'>
                 {/* Timeline icon */}
                 <div className='shrink-0'>
-                  <div className='w-14 h-14 md:w-20 md:h-20 rounded-full shadow-xl flex items-center justify-center p-3'>
+                  <div className='w-20 h-20 rounded-full shadow-xl flex items-center justify-center p-3'>
                     <Image
                       src={event.icon}
                       alt={event.title}
@@ -114,12 +113,12 @@ export default function Timeline() {
 
                 {/* Horizontal line */}
                 <div
-                  className='w-12 md:w-24 h-0.5 shrink-0'
+                  className='w-8 md:w-24 h-0.5 shrink-0'
                   style={{ backgroundColor: 'rgba(255, 255, 255, 0.7)' }}
                 />
 
                 {/* Content */}
-                <div className='text-white w-4/12'>
+                <div className='text-white w-6/12'>
                   <div
                     className='text-2xl md:text-3xl lg:text-4xl mb-1'
                     style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.5)' }}

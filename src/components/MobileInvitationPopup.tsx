@@ -1,69 +1,13 @@
 'use client';
 
-import { db } from '@/lib/firebase';
-import { Guest } from '@/types';
-import { doc, getDoc, Timestamp, updateDoc } from 'firebase/firestore';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 export default function MobileInvitationPopup() {
   const t = useTranslations('popup');
-  const searchParams = useSearchParams();
-  const guestId = searchParams.get('guestId');
   const [isOpen, setIsOpen] = useState(false);
-  const [guest, setGuest] = useState<Guest | null>(null);
-
-  // Fetch guest data and handle status update
-  useEffect(() => {
-    const fetchGuest = async () => {
-      if (!guestId) return;
-
-      // Check if user has already accessed with this guestId
-      const accessedGuestIds = JSON.parse(
-        localStorage.getItem('accessedGuestIds') || '[]'
-      ) as string[];
-
-      // If already accessed, don't fetch or update (prevent incorrect display when link is shared)
-      if (accessedGuestIds.includes(guestId)) {
-        return;
-      }
-
-      try {
-        const guestDoc = await getDoc(doc(db, 'guests', guestId));
-        if (guestDoc.exists()) {
-          const guestData = {
-            id: guestDoc.id,
-            ...guestDoc.data(),
-            receivedAt: guestDoc.data().receivedAt?.toDate(),
-            createdAt: guestDoc.data().createdAt?.toDate(),
-          } as Guest;
-          setGuest(guestData);
-
-          // Update status to 1 (opened) if it's the first time
-          if (guestData.status !== 1) {
-            await updateDoc(doc(db, 'guests', guestId), {
-              status: 1,
-              receivedAt: Timestamp.now(),
-            });
-          }
-
-          // Mark this guestId as accessed in localStorage
-          accessedGuestIds.push(guestId);
-          localStorage.setItem(
-            'accessedGuestIds',
-            JSON.stringify(accessedGuestIds)
-          );
-        }
-      } catch (error) {
-        console.error('Error fetching guest:', error);
-      }
-    };
-
-    fetchGuest();
-  }, [guestId]);
 
   useEffect(() => {
     // Scroll to top on initial load
@@ -238,66 +182,19 @@ export default function MobileInvitationPopup() {
                 initial='hidden'
                 animate='visible'
               >
-                <div
-                  className='text-base border-b border-t border-[#B03060] pb-1 inline-block font-semibold'
-                  style={{ color: '#B03060' }}
-                >
+                <div className='text-base border-b border-t border-theme-primary pb-1 inline-block font-semibold'>
                   {t('date')}
                 </div>
               </motion.div>
 
-              {/* Guest Name Section - Only show if guest exists */}
-              {guest && (
-                <>
-                  {/* Dotted Line Separator */}
-                  <motion.div
-                    className='flex justify-center mb-3'
-                    custom={4}
-                    variants={contentVariants}
-                    initial='hidden'
-                    animate='visible'
-                  >
-                    <div className='w-3/4 border-t-2 border-dashed border-gray-300'></div>
-                  </motion.div>
-                  <motion.div
-                    className='text-center mb-2'
-                    custom={5}
-                    variants={contentVariants}
-                    initial='hidden'
-                    animate='visible'
-                  >
-                    <div className='text-xs uppercase tracking-wider text-gray-600 mb-1'>
-                      {t('inviteTo')}
-                    </div>
-                    <div
-                      className='text-2xl uppercase font-dancing-script'
-                      style={{ color: '#B03060' }}
-                    >
-                      {guest.name}
-                    </div>
-                  </motion.div>
-                  <motion.div
-                    className='flex justify-center mb-3'
-                    custom={5.5}
-                    variants={contentVariants}
-                    initial='hidden'
-                    animate='visible'
-                  >
-                    <div className='w-3/4 border-t-2 border-dashed border-gray-300'></div>
-                  </motion.div>
-                </>
-              )}
-
               <div className='flex justify-center'>
                 <motion.button
                   onClick={handleClose}
-                  className='border-2 px-6 py-1.5 rounded-full font-semibold text-xs uppercase tracking-wider transition-transform active:scale-95'
-                  style={{ borderColor: '#B03060', color: '#B03060' }}
-                  custom={6}
+                  className='border-2 px-6 py-1.5 rounded-full font-semibold text-xs uppercase tracking-wider border-theme-primary text-theme-primary'
+                  custom={4}
                   variants={contentVariants}
                   initial='hidden'
                   animate='visible'
-                  whileTap={{ scale: 0.95 }}
                 >
                   {t('viewInvitation')}
                 </motion.button>

@@ -61,13 +61,13 @@ export default function CoupleInfo() {
     >
       {/* <Quote /> */}
       <motion.div
-        className='relative z-10 max-w-3xl mx-auto text-center text-theme-primary px-6 mb-10'
+        className='relative z-10 max-w-3xl mx-auto text-center px-6 mb-10'
         variants={containerVariants}
         initial='hidden'
         animate={inView ? 'visible' : 'hidden'}
       >
         <motion.h2
-          className='text-2xl md:text-3xl lg:text-4xl uppercase tracking-wide mb-6 md:mb-8 font-dancing-script font-bold'
+          className='text-6xl md:text-7xl lg:text-8xl text-center mb-8 md:mb-16 font-dancing-script text-theme-primary'
           variants={itemVariants}
           transition={{ duration: 0.8, ease: [0.6, -0.05, 0.01, 0.99] }}
         >
@@ -85,7 +85,7 @@ export default function CoupleInfo() {
           <div className='w-px h-10 md:h-10 bg-theme-primary opacity-50'></div>
         </motion.div>
         <motion.p
-          className='text-lg md:text-xl lg:text-2xl leading-relaxed'
+          className='text-base md:text-lg lg:text-xl leading-relaxed'
           variants={itemVariants}
           transition={{
             duration: 0.8,

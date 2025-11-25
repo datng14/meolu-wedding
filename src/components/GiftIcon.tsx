@@ -91,8 +91,7 @@ export default function GiftIcon() {
                 <div className='text-center space-y-4 md:space-y-6'>
                   {/* Title */}
                   <motion.h2
-                    className='text-2xl md:text-3xl font-dancing-script'
-                    style={{ color: 'var(--theme-primary-darker)' }}
+                    className='text-4xl md:text-4xl lg:text-5xl text-center mb-8 md:mb-16 font-dancing-script text-theme-primary font-bold'
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
@@ -120,7 +119,7 @@ export default function GiftIcon() {
 
                   {/* Description */}
                   <motion.p
-                    className='text-base md:text-lg text-gray-600 px-4'
+                    className='text-sm md:text-base text-gray-600 px-4'
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}

@@ -93,7 +93,7 @@ export default function Invitation() {
             <h2 className='text-xl md:text-2xl lg:text-3xl uppercase font-heading'>
               {tCouple('groomName')}
             </h2>
-            <p className='text-lg md:text-lg lg:text-xl font-heading py-5'>&</p>
+            <p className='text-lg md:text-lg lg:text-xl font-heading py-'>&</p>
             <h2 className='text-xl md:text-2xl lg:text-3xl uppercase font-heading'>
               {tCouple('brideName')}
             </h2>
@@ -106,14 +106,14 @@ export default function Invitation() {
           >
             <div className='flex justify-center items-center gap-4'>
               <p>18:00</p>
-              <span style={{ color: 'var(--gold-accent)' }}>|</span>
+              <span>|</span>
             </div>
             <div className='flex-col text-4xl md:text-4xl lg:text-4xl'>
               <p>24</p>
               <p>01</p>
               <p>26</p>
             </div>
-            <span style={{ color: 'var(--gold-accent)' }}>|</span>
+            <span>|</span>
             <p>{t('dayOfWeek')}</p>
           </div>
         </motion.div>

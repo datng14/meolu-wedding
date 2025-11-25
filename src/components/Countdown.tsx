@@ -78,11 +78,7 @@ export default function Countdown() {
   }, [targetDate]);
 
   return (
-    <section
-      ref={ref}
-      className='p-12 px-4 md:p-20'
-      style={{ backgroundColor: 'var(--neutral-mid)' }}
-    >
+    <section ref={ref}>
       <motion.div
         className='max-w-6xl mx-auto text-center'
         initial='hidden'
@@ -106,48 +102,33 @@ export default function Countdown() {
         >
           {t('title')}
         </motion.h2>
-        <div className='flex justify-center gap-2 md:gap-4 lg:gap-6 flex-wrap items-center'>
+        <div className='flex justify-center gap-2 md:gap-4 lg:gap-6 flex-wrap items-center text-theme-primary'>
           <motion.div
-            className='min-w-[70px] md:min-w-[90px]'
+            className='min-w-[40px] md:min-w-[90px]'
             whileHover={{ scale: 1.05, y: -2 }}
             transition={{ duration: 0.2 }}
           >
             <TimeUnit value={timeLeft.days} label={t('days')} />
           </motion.div>
-          <span
-            className='text-2xl md:text-3xl lg:text-4xl'
-            style={{ color: 'var(--theme-primary-soft)' }}
-          >
-            :
-          </span>
+          <span className='text-2xl md:text-3xl lg:text-4xl'>:</span>
           <motion.div
-            className='min-w-[70px] md:min-w-[90px]'
+            className='min-w-[40px] md:min-w-[90px]'
             whileHover={{ scale: 1.05, y: -2 }}
             transition={{ duration: 0.2 }}
           >
             <TimeUnit value={timeLeft.hours} label={t('hours')} />
           </motion.div>
-          <span
-            className='text-2xl md:text-3xl lg:text-4xl'
-            style={{ color: 'var(--theme-primary-soft)' }}
-          >
-            :
-          </span>
+          <span className='text-2xl md:text-3xl lg:text-4xl'>:</span>
           <motion.div
-            className='min-w-[70px] md:min-w-[90px]'
+            className='min-w-[40px] md:min-w-[90px]'
             whileHover={{ scale: 1.05, y: -2 }}
             transition={{ duration: 0.2 }}
           >
             <TimeUnit value={timeLeft.minutes} label={t('minutes')} />
           </motion.div>
-          <span
-            className='text-2xl md:text-3xl lg:text-4xl'
-            style={{ color: 'var(--theme-primary-soft)' }}
-          >
-            :
-          </span>
+          <span className='text-2xl md:text-3xl lg:text-4xl'>:</span>
           <motion.div
-            className='min-w-[70px] md:min-w-[90px]'
+            className='min-w-[40px] md:min-w-[90px]'
             whileHover={{ scale: 1.05, y: -2 }}
             transition={{ duration: 0.2 }}
           >

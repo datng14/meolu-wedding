@@ -111,7 +111,7 @@ export default function Guestbook() {
     >
       <div className='max-w-6xl mx-auto relative z-10'>
         <motion.h2
-          className='text-5xl md:text-6xl lg:text-7xl text-center mb-6 md:mb-8 font-dancing-script text-theme-primary'
+          className='text-6xl md:text-7xl lg:text-8xl text-center mb-8 md:mb-16 font-dancing-script text-theme-primary'
           initial={{ opacity: 0, y: -30, scale: 0.9 }}
           animate={
             inView
