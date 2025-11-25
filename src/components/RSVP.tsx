@@ -87,13 +87,11 @@ export default function RSVP() {
     <section
       ref={ref}
       className='py-12 px-4 md:py-20'
-      style={{
-        background: `linear-gradient(to bottom, white, var(--theme-primary-ultra-light))`,
-      }}
+      style={{ backgroundColor: 'var(--neutral-mid)' }}
     >
       <div className='max-w-2xl mx-auto'>
         <motion.h2
-          className='text-5xl md:text-6xl lg:text-7xl text-center mb-4 md:mb-6 font-dancing-script'
+          className='text-5xl md:text-6xl lg:text-7xl text-center mb-4 md:mb-6 font-dancing-script text-theme-primary'
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
@@ -101,7 +99,7 @@ export default function RSVP() {
           {t('title')}
         </motion.h2>
         <motion.p
-          className='text-center text-base md:text-lg lg:text-xl text-gray-600 mb-8 md:mb-12'
+          className='text-center text-base md:text-lg lg:text-xl mb-8 md:mb-12 font-body-serif'
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
@@ -130,8 +128,7 @@ export default function RSVP() {
                 transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
               >
                 <svg
-                  className='w-8 h-8 md:w-10 md:h-10'
-                  style={{ color: 'var(--theme-primary)' }}
+                  className='w-8 h-8 md:w-10 md:h-10 text-theme-primary'
                   fill='none'
                   stroke='currentColor'
                   viewBox='0 0 24 24'
@@ -145,8 +142,7 @@ export default function RSVP() {
                 </svg>
               </motion.div>
               <motion.h3
-                className='text-2xl md:text-3xl font-medium'
-                style={{ color: 'var(--theme-primary-darker)' }}
+                className='text-2xl md:text-3xl font-medium text-theme-primary-darker'
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
@@ -187,7 +183,7 @@ export default function RSVP() {
         ) : (
           <motion.form
             onSubmit={handleSubmit}
-            className='bg-white rounded-lg shadow-lg p-6 md:p-8 lg:p-12'
+            className='bg-white shadow-premium-lg p-6 md:p-8 lg:p-12'
             variants={cardVariants}
             initial='hidden'
             animate={inView ? 'visible' : 'hidden'}
@@ -196,7 +192,8 @@ export default function RSVP() {
               <div>
                 <label
                   htmlFor='name'
-                  className='block font-medium mb-2 text-base md:text-lg'
+                  className='block font-medium mb-2 text-base md:text-lg font-body'
+                  style={{ color: 'var(--text-dark)' }}
                 >
                   {t('name')} <span className='text-red-500'>*</span>
                 </label>
@@ -207,25 +204,36 @@ export default function RSVP() {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className='w-full px-3 py-2.5 md:px-4 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent'
+                  className='w-full px-3 py-2.5 md:px-4 md:py-3 text-sm md:text-base border font-body focus:ring-2 focus:border-transparent transition-all'
+                  style={{
+                    borderColor: 'var(--theme-primary-soft)',
+                    color: 'var(--text-dark)',
+                  }}
                   onFocus={(e) => {
                     e.currentTarget.style.borderColor = 'var(--theme-primary)';
                     e.currentTarget.style.boxShadow =
                       '0 0 0 2px var(--theme-primary-light)';
                   }}
                   onBlur={(e) => {
-                    e.currentTarget.style.borderColor = '';
+                    e.currentTarget.style.borderColor =
+                      'var(--theme-primary-soft)';
                     e.currentTarget.style.boxShadow = '';
                   }}
                 />
               </div>
 
               <div>
-                <label className='block font-medium mb-2 text-base md:text-lg'>
+                <label
+                  className='block font-medium mb-2 text-base md:text-lg font-body'
+                  style={{ color: 'var(--text-dark)' }}
+                >
                   {t('attending')} <span className='text-red-500'>*</span>
                 </label>
                 <div className='space-y-2'>
-                  <label className='flex items-center text-base md:text-lg'>
+                  <label
+                    className='flex items-center text-base md:text-lg font-body cursor-pointer'
+                    style={{ color: 'var(--text-dark)' }}
+                  >
                     <input
                       type='radio'
                       name='attending'
@@ -233,10 +241,14 @@ export default function RSVP() {
                       checked={formData.attending === 'yes'}
                       onChange={handleChange}
                       className='mr-2 focus:ring-2'
+                      style={{ accentColor: 'var(--theme-primary)' }}
                     />
                     {t('yes')}
                   </label>
-                  <label className='flex items-center text-base md:text-lg'>
+                  <label
+                    className='flex items-center text-base md:text-lg font-body cursor-pointer'
+                    style={{ color: 'var(--text-dark)' }}
+                  >
                     <input
                       type='radio'
                       name='attending'
@@ -244,6 +256,7 @@ export default function RSVP() {
                       checked={formData.attending === 'no'}
                       onChange={handleChange}
                       className='mr-2 focus:ring-2'
+                      style={{ accentColor: 'var(--theme-primary)' }}
                     />
                     {t('no')}
                   </label>
@@ -254,7 +267,8 @@ export default function RSVP() {
                 <div>
                   <label
                     htmlFor='guests'
-                    className='block font-medium mb-2 text-base md:text-lg'
+                    className='block font-medium mb-2 text-base md:text-lg font-body'
+                    style={{ color: 'var(--text-dark)' }}
                   >
                     {t('guests')}
                   </label>
@@ -265,7 +279,11 @@ export default function RSVP() {
                     min='1'
                     value={formData.guests}
                     onChange={handleChange}
-                    className='w-full px-3 py-2.5 md:px-4 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent'
+                    className='w-full px-3 py-2.5 md:px-4 md:py-3 text-sm md:text-base border font-body focus:ring-2 focus:border-transparent transition-all'
+                    style={{
+                      borderColor: 'var(--theme-primary-soft)',
+                      color: 'var(--text-dark)',
+                    }}
                     onFocus={(e) => {
                       e.currentTarget.style.borderColor =
                         'var(--theme-primary)';
@@ -273,7 +291,8 @@ export default function RSVP() {
                         '0 0 0 2px var(--theme-primary-light)';
                     }}
                     onBlur={(e) => {
-                      e.currentTarget.style.borderColor = '';
+                      e.currentTarget.style.borderColor =
+                        'var(--theme-primary-soft)';
                       e.currentTarget.style.boxShadow = '';
                     }}
                   />
@@ -281,11 +300,17 @@ export default function RSVP() {
               )}
 
               <div>
-                <label className='block font-medium mb-2 text-base md:text-lg'>
+                <label
+                  className='block font-medium mb-2 text-base md:text-lg font-body'
+                  style={{ color: 'var(--text-dark)' }}
+                >
                   {t('areYouVegan')} <span className='text-red-500'>*</span>
                 </label>
                 <div className='space-y-2'>
-                  <label className='flex items-center text-base md:text-lg'>
+                  <label
+                    className='flex items-center text-base md:text-lg font-body cursor-pointer'
+                    style={{ color: 'var(--text-dark)' }}
+                  >
                     <input
                       type='radio'
                       name='vegan'
@@ -293,10 +318,14 @@ export default function RSVP() {
                       checked={formData.vegan === 'yes'}
                       onChange={handleChange}
                       className='mr-2 focus:ring-2'
+                      style={{ accentColor: 'var(--theme-primary)' }}
                     />
                     {t('yesVegan')}
                   </label>
-                  <label className='flex items-center text-base md:text-lg'>
+                  <label
+                    className='flex items-center text-base md:text-lg font-body cursor-pointer'
+                    style={{ color: 'var(--text-dark)' }}
+                  >
                     <input
                       type='radio'
                       name='vegan'
@@ -304,6 +333,7 @@ export default function RSVP() {
                       checked={formData.vegan === 'no'}
                       onChange={handleChange}
                       className='mr-2 focus:ring-2'
+                      style={{ accentColor: 'var(--theme-primary)' }}
                     />
                     {t('noVegan')}
                   </label>
@@ -313,7 +343,8 @@ export default function RSVP() {
               <div>
                 <label
                   htmlFor='message'
-                  className='block font-medium mb-2 text-base md:text-lg'
+                  className='block font-medium mb-2 text-base md:text-lg font-body'
+                  style={{ color: 'var(--text-dark)' }}
                 >
                   {t('message')}
                 </label>
@@ -324,14 +355,19 @@ export default function RSVP() {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder={t('messagePlaceholder')}
-                  className='w-full px-3 py-2.5 md:px-4 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent'
+                  className='w-full px-3 py-2.5 md:px-4 md:py-3 text-sm md:text-base border font-body focus:ring-2 focus:border-transparent transition-all'
+                  style={{
+                    borderColor: 'var(--theme-primary-soft)',
+                    color: 'var(--text-dark)',
+                  }}
                   onFocus={(e) => {
                     e.currentTarget.style.borderColor = 'var(--theme-primary)';
                     e.currentTarget.style.boxShadow =
                       '0 0 0 2px var(--theme-primary-light)';
                   }}
                   onBlur={(e) => {
-                    e.currentTarget.style.borderColor = '';
+                    e.currentTarget.style.borderColor =
+                      'var(--theme-primary-soft)';
                     e.currentTarget.style.boxShadow = '';
                   }}
                 />
@@ -340,12 +376,12 @@ export default function RSVP() {
               <motion.button
                 type='submit'
                 disabled={isSubmitting}
-                className='w-full px-6 py-3 md:px-8 md:py-4 text-sm md:text-base text-white rounded-full font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed'
+                className='w-full px-6 py-3 md:px-8 md:py-4 text-sm md:text-base text-white font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-body'
                 style={{ backgroundColor: 'var(--theme-primary)' }}
                 onMouseEnter={(e) => {
                   if (!isSubmitting)
                     e.currentTarget.style.backgroundColor =
-                      'var(--theme-primary-dark)';
+                      'var(--theme-primary-soft)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor =

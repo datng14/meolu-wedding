@@ -60,7 +60,7 @@ export default function Timeline() {
       style={{
         backgroundImage: 'url(/images/album-7.jpg)',
         backgroundSize: 'cover',
-        backgroundPosition: '100% 0%',
+        backgroundPosition: '100% 20%',
         backgroundAttachment: 'fixed',
         backgroundRepeat: 'no-repeat',
       }}
@@ -68,7 +68,7 @@ export default function Timeline() {
       {/* Dark overlay for text readability */}
       <div className='absolute inset-0 bg-black opacity-50'></div>
 
-      <div className='max-w-4xl mx-auto relative z-10'>
+      <div className='max-w-4xl mx-auto relative z-10 '>
         <motion.h2
           className='text-5xl md:text-6xl lg:text-7xl text-center mb-12 md:mb-20 text-white font-dancing-script'
           initial={{ opacity: 0, y: -50, rotateX: -90 }}

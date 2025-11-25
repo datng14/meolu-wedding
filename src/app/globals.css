@@ -1,18 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Lora:wght@400;500;600;700&display=swap');
 @import 'tailwindcss';
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #faf7f5;
+  --foreground: #4a2e35;
 
-  /* Theme Color System - Rose/Magenta theme for wedding */
-  /* Primary color: #B03060 (rose/magenta) */
+  /* Premium Wedding Color Palette - #b03060 */
+  /* Primary (accent mạnh) */
   --theme-primary: #b03060;
-  --theme-primary-light: #d89bb3b3;
-  /* Auto-generated theme colors from primary */
-  /* These automatically adjust based on --theme-primary */
+  /* Primary soft (nhạt từ #b03060, opacity 70%) */
+  --theme-primary-soft: #d06d8c;
+  /* Primary light (for hover states) */
+  --theme-primary-light: rgba(208, 109, 140, 0.7);
+  /* Primary dark */
   --theme-primary-dark: #8b2450;
-  --theme-primary-darker: color-mix(in srgb, var(--theme-primary) 60%, black);
+  --theme-primary-darker: #6a1c3c;
 
+  /* Neutral colors */
+  --neutral-light: #faf7f5;
+  --neutral-mid: #f0ece9;
+  --neutral-white: #ffffff;
+
+  /* Text colors */
+  --text-dark: #4a2e35;
+  --text-muted: #997;
+
+  /* Gold accent (premium) - chỉ dùng 1-2% */
+  --gold-accent: #c9a86a;
+
+  /* Legacy support */
   --theme-primary-lighter: color-mix(in srgb, var(--theme-primary) 95%, white);
   --theme-primary-ultra-light: color-mix(
     in srgb,
@@ -35,11 +51,18 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-theme-primary: var(--theme-primary);
+  --color-theme-primary-soft: var(--theme-primary-soft);
   --color-theme-primary-dark: var(--theme-primary-dark);
   --color-theme-primary-darker: var(--theme-primary-darker);
   --color-theme-primary-light: var(--theme-primary-light);
   --color-theme-primary-lighter: var(--theme-primary-lighter);
   --color-theme-primary-ultra-light: var(--theme-primary-ultra-light);
+  --color-neutral-light: var(--neutral-light);
+  --color-neutral-mid: var(--neutral-mid);
+  --color-neutral-white: var(--neutral-white);
+  --color-text-dark: var(--text-dark);
+  --color-text-muted: var(--text-muted);
+  --color-gold-accent: var(--gold-accent);
 }
 
 @font-face {
@@ -69,14 +92,100 @@
 
 html,
 body {
-  background: var(--background);
-  color: var(--color-theme-primary);
-  font-family: var(--font-lora);
+  background: var(--neutral-light);
+  color: var(--text-dark);
+  font-family: 'Inter', 'Lora', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
 }
 
+/* Premium Typography */
+.font-heading {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-body {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-body-serif {
+  font-family: 'Lora', serif;
+}
+
+/* Fine paper texture background (subtle) */
 .bg-paper {
-  background-image: url('/bg-paper.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: var(--neutral-light);
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(0, 0, 0, 0.02) 1px,
+    transparent 0
+  );
+  background-size: 20px 20px;
+}
+
+/* Smooth section transitions */
+.section-transition-gradient {
+  position: relative;
+}
+
+.section-transition-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(
+    to bottom,
+    rgba(176, 48, 96, 0.1) 0%,
+    rgba(176, 48, 96, 0.05) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Floral divider line */
+.floral-divider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.floral-divider::before,
+.floral-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--theme-primary-soft),
+    transparent
+  );
+}
+
+.floral-divider::before {
+  margin-right: 1rem;
+}
+
+.floral-divider::after {
+  margin-left: 1rem;
+}
+
+/* Shadow utilities for premium feel */
+.shadow-premium {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05),
+    0 2px 4px -1px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(176, 48, 96, 0.05);
+}
+
+.shadow-premium-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08),
+    0 4px 6px -2px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(176, 48, 96, 0.05);
+}
+
+/* Inner shadow for smooth transitions */
+.inner-shadow-top {
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.3);
 }

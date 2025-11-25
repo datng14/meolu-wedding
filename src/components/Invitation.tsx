@@ -16,7 +16,7 @@ export default function Invitation() {
   return (
     <section
       ref={ref}
-      className='pt-10 px-4 md:pt-10 bg-white relative overflow-hidden bg-paper'
+      className='p-10 px-4 md:p-10 bg-paper relative overflow-hidden section-transition-gradient'
     >
       <div className='max-w-4xl mx-auto relative z-10'>
         <motion.div
@@ -30,7 +30,7 @@ export default function Invitation() {
         >
           {/* Logo/Monogram with signature background */}
           <motion.div
-            className='flex justify-center my-8 font-dancing-script'
+            className='flex justify-center my-8 font-heading'
             initial={{ scale: 0, rotate: -180 }}
             animate={
               inView ? { scale: 1, rotate: 0 } : { scale: 0, rotate: -180 }
@@ -51,7 +51,13 @@ export default function Invitation() {
                 quality={100}
               />
               <div className='relative inset-0 flex items-center justify-center'>
-                <div className='text-5xl md:text-6xl lg:text-7xl relative h-20 w-20'>
+                <div
+                  className='text-5xl md:text-6xl lg:text-7xl relative h-20 w-20 font-heading'
+                  style={{
+                    color: 'var(--theme-primary)',
+                    textShadow: '0 0 0 1px var(--gold-accent)',
+                  }}
+                >
                   <span className='absolute top-[20px] left-[20px]'>D</span>
                   <span className='absolute top-[55px] left-[30px]'>T</span>
                 </div>
@@ -60,44 +66,54 @@ export default function Invitation() {
           </motion.div>
 
           {/* Invitation Text */}
-          <div className='text-lg md:text-lg lg:text-xl'>
+          <div
+            className='text-lg md:text-lg lg:text-xl font-body-serif'
+            style={{ color: 'var(--text-dark)' }}
+          >
             <p>{t('title')}</p>
             <p>{t('subtitle')}</p>
           </div>
 
           <motion.div
-            className='flex items-center justify-center mb-6 md:mb-8 '
+            className='flex items-center justify-center mb-6 md:mb-8'
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className='w-px h-10 bg-theme-primary opacity-50'></div>
+            <div
+              className='w-px h-10'
+              style={{
+                backgroundColor: 'var(--gold-accent)',
+                opacity: 0.6,
+              }}
+            ></div>
           </motion.div>
 
-          <div className='y-12'>
-            <h2 className='text-xl md:text-2xl lg:text-3xl text-theme-primary-dark uppercase'>
+          <div className='y-12 text-theme-primary'>
+            <h2 className='text-xl md:text-2xl lg:text-3xl uppercase font-heading'>
               {tCouple('groomName')}
             </h2>
-            <p className='text-2xl md:text-3xl lg:text-4xl font-dancing-script'>
-              &
-            </p>
-            <h2 className='text-xl md:text-2xl lg:text-3xl text-theme-primary-dark uppercase'>
+            <p className='text-lg md:text-lg lg:text-xl font-heading py-5'>&</p>
+            <h2 className='text-xl md:text-2xl lg:text-3xl uppercase font-heading'>
               {tCouple('brideName')}
             </h2>
           </div>
 
           {/* Date and Time */}
-          <div className='flex justify-center items-center gap-4 text-4xl md:text-5xl lg:text-6xl'>
+          <div
+            className='flex justify-center items-center gap-4 text-4xl md:text-5xl lg:text-6xl font-heading'
+            style={{ color: 'var(--text-dark)' }}
+          >
             <div className='flex justify-center items-center gap-4'>
-              <p className=''>18:00</p>
-              <span>|</span>
+              <p>18:00</p>
+              <span style={{ color: 'var(--gold-accent)' }}>|</span>
             </div>
             <div className='flex-col text-4xl md:text-4xl lg:text-4xl'>
               <p>24</p>
               <p>01</p>
               <p>26</p>
             </div>
-            <span>|</span>
+            <span style={{ color: 'var(--gold-accent)' }}>|</span>
             <p>{t('dayOfWeek')}</p>
           </div>
         </motion.div>

@@ -37,7 +37,7 @@ export default function Hero() {
   };
 
   return (
-    <section ref={ref} className='relative w-full overflow-hidden'>
+    <section ref={ref} className='relative w-full overflow-hidden bg-paper'>
       {/* Hero Image - Mobile First */}
       <div className='relative w-full h-screen overflow-hidden'>
         <motion.div

@@ -57,7 +57,7 @@ export default function Calendar() {
   return (
     <section
       ref={ref}
-      className='px-4 md:pt-15 relative overflow-hidden bg-paper'
+      className='p-12 md:p-20 relative overflow-hidden bg-paper'
     >
       <div className='max-w-xl mx-auto text-center relative z-10'>
         <motion.div
@@ -69,7 +69,7 @@ export default function Calendar() {
           style={{ transformStyle: 'preserve-3d' }}
         >
           {/* Year and Month */}
-          <div className='mb-8 md:mb-12 relative'>
+          <div className='mb-8 md:mb-12 relative text-theme-primary'>
             <h2 className='text-8xl md:text-8xl mb-4 font-ergisa'>2026</h2>
             <p className='text-6xl md:text-7xl absolute top-15 left-1/2 -translate-x-1/2 font-high-spirited'>
               {t('month')}
@@ -77,7 +77,7 @@ export default function Calendar() {
           </div>
 
           {/* Days of Week */}
-          <div className='grid grid-cols-7 mb-4 mt-30 text-theme-primary-lighter'>
+          <div className='grid grid-cols-7 mb-4 mt-30'>
             {daysOfWeek.map((day) => (
               <div
                 key={day}

@@ -106,11 +106,12 @@ export default function Guestbook() {
   return (
     <section
       ref={ref}
-      className='py-12 px-4 md:py-20 relative overflow-hidden bg-paper'
+      className='py-12 px-4 md:py-20 relative overflow-hidden'
+      style={{ backgroundColor: 'var(--neutral-white)' }}
     >
       <div className='max-w-6xl mx-auto relative z-10'>
         <motion.h2
-          className='text-5xl md:text-6xl lg:text-7xl text-center mb-6 md:mb-8 font-dancing-script'
+          className='text-5xl md:text-6xl lg:text-7xl text-center mb-6 md:mb-8 font-dancing-script text-theme-primary'
           initial={{ opacity: 0, y: -30, scale: 0.9 }}
           animate={
             inView
@@ -127,7 +128,8 @@ export default function Guestbook() {
           {t('title')}
         </motion.h2>
         <motion.p
-          className='text-center text-base md:text-lg lg:text-xl mb-8 md:mb-12'
+          className='text-center text-base md:text-lg lg:text-xl mb-8 md:mb-12 font-body-serif'
+          style={{ color: 'var(--text-dark)' }}
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
@@ -240,7 +242,7 @@ export default function Guestbook() {
         ) : (
           <motion.form
             onSubmit={handleSubmit}
-            className='rounded-lg shadow-lg p-6 md:p-8 mb-8 md:mb-12'
+            className='shadow-lg p-6 md:p-8 mb-8 md:mb-12'
             style={{ backgroundColor: 'var(--theme-primary-light)' }}
             variants={{
               hidden: { opacity: 0, y: 50, rotate: -5 },
@@ -268,7 +270,21 @@ export default function Guestbook() {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder={t('name')}
-                  className='w-full px-3 py-2.5 md:px-4 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg  bg-white placeholder:text-theme-primary text-theme-primary-darker'
+                  className='w-full px-3 py-2.5 md:px-4 md:py-3 text-sm md:text-base border bg-white font-body transition-all'
+                  style={{
+                    borderColor: 'var(--theme-primary-soft)',
+                    color: 'var(--text-dark)',
+                  }}
+                  onFocus={(e) => {
+                    e.currentTarget.style.borderColor = 'var(--theme-primary)';
+                    e.currentTarget.style.boxShadow =
+                      '0 0 0 2px var(--theme-primary-light)';
+                  }}
+                  onBlur={(e) => {
+                    e.currentTarget.style.borderColor =
+                      'var(--theme-primary-soft)';
+                    e.currentTarget.style.boxShadow = '';
+                  }}
                 />
               </div>
 
@@ -280,7 +296,21 @@ export default function Guestbook() {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder={t('messagePlaceholder')}
-                  className='w-full px-3 py-2.5 md:px-4 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg bg-white placeholder:text-theme-primary text-theme-primary-darker'
+                  className='w-full px-3 py-2.5 md:px-4 md:py-3 text-sm md:text-base border bg-white font-body transition-all'
+                  style={{
+                    borderColor: 'var(--theme-primary-soft)',
+                    color: 'var(--text-dark)',
+                  }}
+                  onFocus={(e) => {
+                    e.currentTarget.style.borderColor = 'var(--theme-primary)';
+                    e.currentTarget.style.boxShadow =
+                      '0 0 0 2px var(--theme-primary-light)';
+                  }}
+                  onBlur={(e) => {
+                    e.currentTarget.style.borderColor =
+                      'var(--theme-primary-soft)';
+                    e.currentTarget.style.boxShadow = '';
+                  }}
                 />
               </div>
 
@@ -288,7 +318,7 @@ export default function Guestbook() {
                 <motion.button
                   type='submit'
                   disabled={isSubmitting}
-                  className='px-6 py-3 md:px-8 md:py-4 text-sm md:text-base rounded-full font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-white bg-theme-primary cursor-pointer'
+                  className='px-6 py-3 md:px-8 md:py-4 text-sm md:text-base font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-white bg-theme-primary cursor-pointer'
                   whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                   whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                 >
@@ -314,19 +344,29 @@ export default function Guestbook() {
             messages.map((message, index) => (
               <motion.div
                 key={message.id}
-                className='bg-white rounded-lg shadow-md p-4 md:p-6'
+                className='bg-white p-4 md:p-6'
+                style={{
+                  border: '1px solid var(--neutral-mid)',
+                }}
                 variants={messageVariants}
                 initial='hidden'
                 animate={inView ? 'visible' : 'hidden'}
                 transition={{ delay: index * 0.1 }}
               >
                 <div className='flex items-start justify-between mb-2 md:mb-3'>
-                  <h3 className='text-base md:text-lg'>{message.name}</h3>
-                  <span className='text-sm md:text-base'>
+                  <h3 className='text-base md:text-lg font-body font-semibold text-theme-primary'>
+                    {message.name}
+                  </h3>
+                  <span className='text-sm md:text-base font-body'>
                     {message.submittedAt.toLocaleDateString()}
                   </span>
                 </div>
-                <p className='text-sm md:text-base'>{message.message}</p>
+                <p
+                  className='text-sm md:text-base font-body-serif'
+                  style={{ color: 'var(--text-dark)' }}
+                >
+                  {message.message}
+                </p>
               </motion.div>
             ))
           )}

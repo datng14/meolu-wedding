@@ -57,18 +57,17 @@ export default function CoupleInfo() {
   return (
     <section
       ref={ref}
-      className='p-12 md:py-20 relative overflow-hidden'
-      style={{ backgroundColor: 'var(--theme-primary-darker)' }}
+      className='p-12 md:py-20 relative overflow-hidden section-transition-gradient'
     >
       {/* <Quote /> */}
       <motion.div
-        className='relative z-10 max-w-3xl mx-auto text-center text-white px-6 mb-10'
+        className='relative z-10 max-w-3xl mx-auto text-center text-theme-primary px-6 mb-10'
         variants={containerVariants}
         initial='hidden'
         animate={inView ? 'visible' : 'hidden'}
       >
         <motion.h2
-          className='text-2xl md:text-3xl lg:text-4xl uppercase tracking-wide mb-6 md:mb-8'
+          className='text-2xl md:text-3xl lg:text-4xl uppercase tracking-wide mb-6 md:mb-8 font-dancing-script font-bold'
           variants={itemVariants}
           transition={{ duration: 0.8, ease: [0.6, -0.05, 0.01, 0.99] }}
         >
@@ -83,7 +82,7 @@ export default function CoupleInfo() {
             delay: 0.2,
           }}
         >
-          <div className='w-px h-10 md:h-16 bg-white opacity-50'></div>
+          <div className='w-px h-10 md:h-10 bg-theme-primary opacity-50'></div>
         </motion.div>
         <motion.p
           className='text-lg md:text-xl lg:text-2xl leading-relaxed'
@@ -100,31 +99,32 @@ export default function CoupleInfo() {
       {/* <Quote /> */}
 
       {/* Decorative Flowers */}
-      {/* Flower 2 - Bottom left on mobile behind groom, right side on desktop */}
-      <div className='absolute top-[-5%] right-0 w-[20%] h-1/2 md:left-0 md:top-1/2 md:-translate-y-1/2 md:w-[20%] md:h-auto z-0 pointer-events-none'>
+
+      {/* Flower 1 - Left corner of bride section (left side) */}
+      <div className='absolute bottom-15 left-0 md:left-[calc(50%-37rem)] w-[160px] lg:w-[180px] h-auto z-0 pointer-events-none opacity-80'>
         <Image
-          src='/images/decor-flower2.png'
+          src='/images/decor-flower1.svg'
           alt=''
-          width={200}
-          height={200}
-          className='absolute top-0 right-0 w-full h-auto md:w-full'
+          width={180}
+          height={180}
+          className='w-full h-auto'
           quality={100}
           loading='eager'
         />
       </div>
 
-      {/* Flower 1 - Top right on mobile behind bride, left side on desktop */}
-      <div className='absolute bottom-[-10%] left-0 w-[30%] h-1/2 md:right-0 md:bottom-1/2 md:translate-y-1/2 md:left-auto md:w-[20%] md:h-auto z-0 pointer-events-none'>
+      {/* Flower 2 - Right corner of groom section (right side) */}
+      <div className='absolute top-70 right-0 md:left-[calc(50%+26rem)] w-[120px] md:w-[160px] lg:w-[180px] h-auto z-0 pointer-events-none opacity-80'>
         <Image
-          src='/images/decor-flower1.png'
+          src='/images/decor-flower2.svg'
           alt=''
-          width={200}
-          height={200}
-          className='absolute bottom-0 left-0 w-full h-auto md:w-full'
+          width={180}
+          height={180}
+          className='w-full h-auto'
           quality={100}
+          loading='eager'
         />
       </div>
-
       <div className='relative z-10 max-w-6xl mx-auto md:flex md:items-center md:justify-center md:gap-8 lg:gap-12'>
         {/* Bride Section - Mobile First */}
         <motion.div

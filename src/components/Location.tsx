@@ -25,15 +25,25 @@ export default function Location() {
 
     window.open(googleCalendarUrl, '_blank');
   };
-
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: 'easeOut' as const,
+      },
+    },
+  };
   return (
     <section
       ref={ref}
-      className='pt-10 pb-20 md:pb-20 px-4 md:pt-10 bg-white bg-paper'
+      className='p-12 md:p-20 bg-white section-transition-gradient'
     >
       <div className='max-w-6xl mx-auto'>
         <motion.h2
-          className='text-xl md:text-1xl lg:text-2xl text-center mb-4 md:mb-4'
+          className='text-xl md:text-1xl lg:text-2xl text-center mb-4 md:mb-4 font-heading text-theme-primary'
           initial={{ opacity: 0, y: 100, scale: 0.8 }}
           animate={
             inView
@@ -50,8 +60,21 @@ export default function Location() {
           {t('title')}
         </motion.h2>
 
+        {/* Floral Divider */}
+        <motion.div
+          className='floral-divider mb-6 md:mb-8 text-theme-primary'
+          variants={itemVariants}
+        >
+          <svg width='24' height='24' viewBox='0 0 24 24' fill='none'>
+            <path
+              d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'
+              fill='currentColor'
+              opacity='0.6'
+            />
+          </svg>
+        </motion.div>
         {/* Venue */}
-        <div className='space-y-2 text-center text-xl md:text-2xl lg:text-3xl'>
+        <div className='space-y-2 text-center text-xl md:text-2xl lg:text-3xl font-body-serif text-dark'>
           <p className='font-bold whitespace-pre-line'>
             {tInvitation('venue')}
           </p>
@@ -62,18 +85,20 @@ export default function Location() {
           <div className='text-center mt-6'>
             <motion.button
               onClick={handleAddToCalendar}
-              className='px-8 py-3 text-xs md:text-xs lg:text-sm text-white rounded-full uppercase tracking-wider transition-colors border-2 cursor-pointer'
+              className='px-8 py-3 text-xs md:text-xs lg:text-sm text-white uppercase tracking-wider transition-colors border-2 cursor-pointer font-body'
               style={{
                 backgroundColor: 'var(--theme-primary)',
+                borderColor: 'var(--theme-primary)',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'var(--theme-white)';
+                e.currentTarget.style.backgroundColor = 'var(--neutral-white)';
                 e.currentTarget.style.color = 'var(--theme-primary)';
                 e.currentTarget.style.borderColor = 'var(--theme-primary)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = 'var(--theme-primary)';
                 e.currentTarget.style.color = 'white';
+                e.currentTarget.style.borderColor = 'var(--theme-primary)';
               }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -84,7 +109,10 @@ export default function Location() {
         </div>
         {/* Google Map */}
         <motion.div
-          className='mt-8 md:mt-12 h-64 md:h-96 lg:h-[600px] rounded-lg overflow-hidden shadow-lg'
+          className='mt-8 md:mt-12 h-64 md:h-96 lg:h-[600px] overflow-hidden shadow-premium-lg'
+          style={{
+            border: '1px solid var(--neutral-mid)',
+          }}
           initial={{ opacity: 0, y: 50, scale: 0.95 }}
           animate={
             inView

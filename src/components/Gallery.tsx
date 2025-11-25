@@ -107,11 +107,11 @@ export default function Gallery() {
   return (
     <section
       ref={ref}
-      className='py-12 px-4 md:py-20 relative overflow-hidden bg-paper'
+      className='py-12 px-4 md:py-20 relative overflow-hidden bg-paper section-transition-gradient'
     >
       <div className='max-w-6xl mx-auto'>
         <motion.h2
-          className='text-6xl md:text-7xl lg:text-8xl text-center mb-8 md:mb-16 font-dancing-script'
+          className='text-6xl md:text-7xl lg:text-8xl text-center mb-8 md:mb-16 font-dancing-script text-theme-primary'
           initial={{ opacity: 0, y: 30, rotateZ: -5 }}
           animate={
             inView
@@ -137,9 +137,9 @@ export default function Gallery() {
           {images.map((image, index) => (
             <motion.div
               key={image.id}
-              className='relative aspect-square overflow-hidden rounded-lg shadow-md cursor-pointer'
+              className='relative aspect-square overflow-hidden shadow-premium cursor-pointer group'
               variants={itemVariants}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, y: -4 }}
               transition={{ duration: 0.3 }}
               onClick={() => openLightbox(index)}
             >
@@ -147,10 +147,12 @@ export default function Gallery() {
                 src={image.src}
                 alt={image.alt}
                 fill
-                className='object-cover object-center'
+                className='object-cover object-center transition-transform duration-300 group-hover:scale-110'
                 quality={85}
                 sizes='(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw'
               />
+              {/* Hover overlay */}
+              <div className='absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
             </motion.div>
           ))}
         </motion.div>
