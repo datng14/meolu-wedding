@@ -96,7 +96,10 @@ export default function OurStory() {
                 preload='metadata'
                 poster='/images/thumbnail.png'
               >
-                <source src='/videos/our-story.mp4' type='video/mp4' />
+                <source
+                  src='https://tulw364hxf77w61g.public.blob.vercel-storage.com/our-story.mp4'
+                  type='video/mp4'
+                />
                 <p className='text-white p-4 text-center'>
                   {t('videoNotSupported')}
                 </p>
