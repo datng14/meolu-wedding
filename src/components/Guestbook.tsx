@@ -11,6 +11,7 @@ import {
 } from 'firebase/firestore';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
@@ -104,11 +105,7 @@ export default function Guestbook() {
   };
 
   return (
-    <section
-      ref={ref}
-      className='py-12 px-4 md:py-20 relative overflow-hidden'
-      style={{ backgroundColor: 'var(--neutral-white)' }}
-    >
+    <section ref={ref} className='pt-20 pb-30 px-8 relative'>
       <div className='max-w-6xl mx-auto relative z-10'>
         <motion.h2
           className='text-6xl md:text-7xl lg:text-8xl text-center mb-8 md:mb-16 font-dancing-script text-theme-primary'
@@ -140,8 +137,8 @@ export default function Guestbook() {
         {/* Form */}
         {submitStatus === 'success' ? (
           <motion.div
-            className='rounded-lg shadow-lg p-6 md:p-8 mb-8 md:mb-12'
-            style={{ backgroundColor: 'var(--theme-primary-light)' }}
+            className='rounded-lg shadow-lg p-6 md:p-8 mb-8 md:mb-12 bg-theme-primary-soft-opacity-65'
+            style={{ backgroundColor: 'var(--theme-primary-soft-opacity-65)' }}
             variants={{
               hidden: { opacity: 0, y: 50, rotate: -5 },
               visible: {
@@ -192,16 +189,8 @@ export default function Guestbook() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
               >
-                {t('thankYou')}
-              </motion.h3>
-              <motion.p
-                className='text-base md:text-lg text-white/90'
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.4 }}
-              >
                 {t('successMessage')}
-              </motion.p>
+              </motion.h3>
             </motion.div>
           </motion.div>
         ) : submitStatus === 'error' ? (
@@ -242,12 +231,11 @@ export default function Guestbook() {
         ) : (
           <motion.form
             onSubmit={handleSubmit}
-            className='shadow-lg p-6 md:p-8 mb-8 md:mb-12'
-            style={{ backgroundColor: 'var(--theme-primary-light)' }}
+            className='shadow-lg p-6 md:p-8 mb-8 md:mb-12 relative bg-theme-primary-light opacity-65'
             variants={{
               hidden: { opacity: 0, y: 50, rotate: -5 },
               visible: {
-                opacity: 1,
+                opacity: 0.7,
                 y: 0,
                 rotate: 0,
                 transition: {
@@ -272,7 +260,7 @@ export default function Guestbook() {
                   placeholder={t('name')}
                   className='w-full px-3 py-2.5 md:px-4 md:py-3 text-sm md:text-base border bg-white font-body transition-all'
                   style={{
-                    borderColor: 'var(--theme-primary-soft)',
+                    borderColor: 'transparent',
                     color: 'var(--text-dark)',
                   }}
                   onFocus={(e) => {
@@ -298,7 +286,7 @@ export default function Guestbook() {
                   placeholder={t('messagePlaceholder')}
                   className='w-full px-3 py-2.5 md:px-4 md:py-3 text-sm md:text-base border bg-white font-body transition-all'
                   style={{
-                    borderColor: 'var(--theme-primary-soft)',
+                    borderColor: 'transparent',
                     color: 'var(--text-dark)',
                   }}
                   onFocus={(e) => {
@@ -344,7 +332,7 @@ export default function Guestbook() {
             messages.map((message, index) => (
               <motion.div
                 key={message.id}
-                className='bg-white p-4 md:p-6'
+                className='bg-white p-4 md:p-6 rounded-lg'
                 style={{
                   border: '1px solid var(--neutral-mid)',
                 }}
@@ -371,6 +359,29 @@ export default function Guestbook() {
             ))
           )}
         </div>
+      </div>
+      <div className='absolute top-[30px] left-[-12px] w-30 h-auto pointer-events-none opacity-80'>
+        <Image
+          src='/images/bg-guest-book-top.svg'
+          alt=''
+          width={40}
+          height={40}
+          className='w-full h-full'
+          quality={100}
+          loading='eager'
+        />
+      </div>
+
+      <div className='absolute bottom-20 right-0 w-20 h-auto pointer-events-none opacity-80'>
+        <Image
+          src='/images/bg-guest-book-bottom.svg'
+          alt=''
+          width={40}
+          height={40}
+          className='w-full h-full'
+          quality={100}
+          loading='eager'
+        />
       </div>
     </section>
   );

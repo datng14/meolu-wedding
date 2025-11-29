@@ -108,7 +108,7 @@ export default function GiftIcon() {
                   >
                     <div className='relative w-64 h-64 md:w-80 md:h-80 bg-white p-4 rounded-lg border-2 border-gray-200'>
                       <Image
-                        src='/images/qr-2.jpg'
+                        src='/images/qr.jpg'
                         alt='QR Code'
                         fill
                         className='object-contain'

@@ -10,6 +10,7 @@
   --theme-primary: #b03060;
   /* Primary soft (nhạt từ #b03060, opacity 70%) */
   --theme-primary-soft: #d06d8c;
+  --theme-primary-soft-opacity-65: rgba(208, 109, 140, 0.65);
   /* Primary light (for hover states) */
   --theme-primary-light: rgba(208, 109, 140, 0.7);
   /* Primary dark */
@@ -52,6 +53,7 @@
   --color-foreground: var(--foreground);
   --color-theme-primary: var(--theme-primary);
   --color-theme-primary-soft: var(--theme-primary-soft);
+  --color-theme-primary-soft-opacity-65: var(--theme-primary-soft-opacity-65);
   --color-theme-primary-dark: var(--theme-primary-dark);
   --color-theme-primary-darker: var(--theme-primary-darker);
   --color-theme-primary-light: var(--theme-primary-light);

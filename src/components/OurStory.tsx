@@ -88,7 +88,7 @@ export default function OurStory() {
             className='relative w-full flex justify-center mx-auto overflow-hidden'
             variants={videoVariants}
           >
-            <div className='relative lg:w-[360px] md:w-[300px] sm:w-full max-w-full overflow-hidden'>
+            <div className='relative w-[80%] h-[90%]  max-w-full overflow-hidden'>
               <video
                 className='w-full h-auto object-contain block'
                 controls
