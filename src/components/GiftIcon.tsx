@@ -2,7 +2,6 @@
 
 import { AnimatePresence, motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import Image from 'next/image';
 import { useState } from 'react';
 
 export default function GiftIcon() {
@@ -14,7 +13,7 @@ export default function GiftIcon() {
       {/* Floating Gift Button */}
       <motion.button
         onClick={() => setIsOpen(true)}
-        className='fixed bottom-6 right-6 z-40 w-14 h-14 md:w-16 md:h-16 rounded-full shadow-lg flex items-center justify-center transition-all hover:scale-110'
+        className='fixed bottom-6 right-6 z-40 w-10 h-10 rounded-full shadow-lg flex items-center justify-center transition-all hover:scale-110 cursor-pointer'
         style={{ backgroundColor: 'var(--theme-primary)' }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
@@ -23,7 +22,7 @@ export default function GiftIcon() {
         transition={{ delay: 1, type: 'spring', stiffness: 200 }}
       >
         <svg
-          className='w-7 h-7 md:w-8 md:h-8 text-white'
+          className='w-6 h-6 text-white'
           fill='none'
           stroke='currentColor'
           viewBox='0 0 24 24'
@@ -91,31 +90,13 @@ export default function GiftIcon() {
                 <div className='text-center space-y-4 md:space-y-6'>
                   {/* Title */}
                   <motion.h2
-                    className='text-4xl md:text-4xl lg:text-5xl text-center mb-8 md:mb-16 font-dancing-script text-theme-primary font-bold'
+                    className='text-4xl md:text-4xl lg:text-5xl text-center font-dancing-script text-theme-primary font-bold'
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
                   >
                     {t('title')}
                   </motion.h2>
-
-                  {/* QR Code Image */}
-                  <motion.div
-                    className='flex justify-center'
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.2 }}
-                  >
-                    <div className='relative w-64 h-64 md:w-80 md:h-80 bg-white p-4 rounded-lg border-2 border-gray-200'>
-                      <Image
-                        src='/images/qr.jpg'
-                        alt='QR Code'
-                        fill
-                        className='object-contain'
-                        priority
-                      />
-                    </div>
-                  </motion.div>
 
                   {/* Description */}
                   <motion.p

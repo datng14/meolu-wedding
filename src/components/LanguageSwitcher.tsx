@@ -20,7 +20,7 @@ export default function LanguageSwitcher() {
     <div className='fixed top-3 right-3 md:top-4 md:right-4 z-50 flex gap-1.5 md:gap-2'>
       <button
         onClick={() => switchLocale('vi')}
-        className={`px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm rounded-full transition-all shadow-md cursor-pointer ${
+        className={`w-8 h-8 p-2 text-xs rounded-full transition-all shadow-md cursor-pointer ${
           locale === 'vi'
             ? 'text-white'
             : 'bg-white/80 text-gray-700 hover:bg-white'
@@ -35,7 +35,7 @@ export default function LanguageSwitcher() {
       </button>
       <button
         onClick={() => switchLocale('en')}
-        className={`px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm rounded-full transition-all shadow-md cursor-pointer ${
+        className={`w-8 h-8 p-2 text-xs rounded-full transition-all shadow-md cursor-pointer ${
           locale === 'en'
             ? 'text-white'
             : 'bg-white/80 text-gray-700 hover:bg-white'
