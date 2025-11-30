@@ -95,8 +95,8 @@ export default function MobileInvitationPopup() {
         <>
           {/* Overlay */}
           <motion.div
-            className='fixed inset-0 bg-transparent z-100 md:hidden'
-            style={{ backgroundColor: 'rgba(0, 0, 0, 0.3)' }}
+            className='fixed inset-0 bg-transparent z-100 md:hidden backdrop-blur-md'
+            style={{ backgroundColor: 'rgba(0, 0, 0, 0.8)' }}
             variants={overlayVariants}
             initial='hidden'
             animate='visible'
@@ -116,13 +116,13 @@ export default function MobileInvitationPopup() {
             <div className='p-4 pb-6'>
               {/* Double Happiness Symbol - At top center of popup */}
               <motion.div
-                className='relative flex justify-center mb-2'
+                className='relative flex justify-center'
                 custom={0}
                 variants={contentVariants}
                 initial='hidden'
                 animate='visible'
               >
-                <div className='absolute top-[-90px] left-1/2 transform -translate-x-1/2 w-24 h-24 z-100'>
+                <div className='absolute top-[-90px] left-1/2 transform -translate-x-[calc(50%-4px)] w-24 h-24 z-100'>
                   <Image
                     src='/images/happy.svg'
                     alt='Double Happiness'
@@ -133,71 +133,81 @@ export default function MobileInvitationPopup() {
                 </div>
               </motion.div>
               {/* Couple Illustration */}
+
+              {/* Background Image - Behind all content */}
               <motion.div
-                className='flex justify-center mb-3'
+                className='absolute top-[-190px] left-1/2 transform -translate-x-1/2 w-120 h-120 z-0 pointer-events-none'
                 custom={1}
                 variants={contentVariants}
                 initial='hidden'
                 animate='visible'
               >
-                <div className='relative w-48 h-48'>
-                  <Image
-                    src='/images/invitation-bg.png'
-                    alt='Couple'
-                    fill
-                    className='object-contain'
-                    quality={90}
-                  />
-                </div>
+                <Image
+                  src='/images/invitation-bg.png'
+                  alt='Couple'
+                  fill
+                  className='object-contain'
+                  quality={90}
+                />
               </motion.div>
 
-              {/* Title */}
-              <motion.h2
-                className='text-center text-xs uppercase tracking-wider mb-1'
-                custom={2}
-                variants={contentVariants}
-                initial='hidden'
-                animate='visible'
-              >
-                {t('theWeddingOf')}
-              </motion.h2>
-
-              {/* Couple Names */}
-              <motion.h1
-                className='text-center text-xl mb-1'
-                custom={2}
-                variants={contentVariants}
-                initial='hidden'
-                animate='visible'
-                style={{ color: '#B03060' }}
-              >
-                <span className='pb-1'>{t('coupleNames')}</span>
-              </motion.h1>
-
-              {/* Date */}
-              <motion.div
-                className='text-center mb-3'
-                custom={3}
-                variants={contentVariants}
-                initial='hidden'
-                animate='visible'
-              >
-                <div className='text-base border-b border-t border-theme-primary pb-1 inline-block font-semibold'>
-                  {t('date')}
-                </div>
-              </motion.div>
-
-              <div className='flex justify-center'>
-                <motion.button
-                  onClick={handleClose}
-                  className='border-2 px-6 py-1.5 rounded-full font-semibold text-xs uppercase tracking-wider border-theme-primary text-theme-primary'
-                  custom={4}
-                  variants={contentVariants}
-                  initial='hidden'
-                  animate='visible'
+              {/* Text Content with Backdrop Blur */}
+              <div className='relative z-10 pt-[240px]'>
+                <div
+                  className='px-4 mx-2'
+                  style={{
+                    backgroundColor: 'rgba(255, 255, 255, 0.55)',
+                  }}
                 >
-                  {t('viewInvitation')}
-                </motion.button>
+                  {/* Title */}
+                  <motion.h2
+                    className='text-center text-xs uppercase tracking-wider mb-1'
+                    custom={2}
+                    variants={contentVariants}
+                    initial='hidden'
+                    animate='visible'
+                  >
+                    {t('theWeddingOf')}
+                  </motion.h2>
+
+                  {/* Couple Names */}
+                  <motion.h1
+                    className='text-center text-xl mb-1'
+                    custom={2}
+                    variants={contentVariants}
+                    initial='hidden'
+                    animate='visible'
+                    style={{ color: '#B03060' }}
+                  >
+                    <span className='pb-1'>{t('coupleNames')}</span>
+                  </motion.h1>
+
+                  {/* Date */}
+                  <motion.div
+                    className='text-center mb-3'
+                    custom={3}
+                    variants={contentVariants}
+                    initial='hidden'
+                    animate='visible'
+                  >
+                    <div className='text-base border-b border-t border-theme-primary pb-1 inline-block font-semibold'>
+                      {t('date')}
+                    </div>
+                  </motion.div>
+
+                  <div className='flex justify-center'>
+                    <motion.button
+                      onClick={handleClose}
+                      className='border-2 px-6 py-1.5 rounded-full font-semibold text-xs uppercase tracking-wider border-theme-primary text-theme-primary'
+                      custom={4}
+                      variants={contentVariants}
+                      initial='hidden'
+                      animate='visible'
+                    >
+                      {t('viewInvitation')}
+                    </motion.button>
+                  </div>
+                </div>
               </div>
               {/* Button */}
             </div>

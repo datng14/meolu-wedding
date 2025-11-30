@@ -25,17 +25,43 @@ export default function Location() {
 
     window.open(googleCalendarUrl, '_blank');
   };
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const venueItemVariants = {
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.8,
+        duration: 0.6,
         ease: 'easeOut' as const,
       },
     },
   };
+
+  const mapVariants = {
+    hidden: { opacity: 0, y: 60, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        delay: 1.2, // Appears after venue items
+        duration: 1,
+        ease: [0.6, -0.05, 0.01, 0.99] as const,
+      },
+    },
+  };
+
   return (
     <section ref={ref} className='pb-20 md:pb-20'>
       <div className='max-w-6xl mx-auto'>
@@ -58,15 +84,25 @@ export default function Location() {
         </motion.h2>
 
         {/* Venue */}
-        <div className='space-y-2 text-center text-xl md:text-2xl lg:text-3xl font-body-serif text-dark'>
-          <p className='font-bold whitespace-pre-line'>
+        <motion.div
+          className='space-y-2 text-center text-xl md:text-2xl lg:text-3xl font-body-serif text-dark'
+          variants={containerVariants}
+          initial='hidden'
+          animate={inView ? 'visible' : 'hidden'}
+        >
+          <motion.p
+            className='font-bold whitespace-pre-line'
+            variants={venueItemVariants}
+          >
             {tInvitation('venue')}
-          </p>
-          <p className='font-bold'>{tInvitation('lobby')}</p>
-          <p className='px-10'>
+          </motion.p>
+          <motion.p className='font-bold' variants={venueItemVariants}>
+            {tInvitation('lobby')}
+          </motion.p>
+          <motion.p className='px-10' variants={venueItemVariants}>
             {t('address')}: {tInvitation('address')}
-          </p>
-          <div className='text-center mt-6'>
+          </motion.p>
+          <motion.div className='text-center mt-6' variants={venueItemVariants}>
             <motion.button
               onClick={handleAddToCalendar}
               className='px-8 py-3 text-xs md:text-xs lg:text-sm text-white uppercase tracking-wider transition-colors border-2 cursor-pointer font-body'
@@ -89,27 +125,17 @@ export default function Location() {
             >
               {tInvitation('addToCalendar')}
             </motion.button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
         {/* Google Map */}
         <motion.div
           className='mt-14 md:mt-20 h-64 md:h-96 lg:h-[600px] overflow-hidden shadow-premium-lg'
           style={{
             border: '1px solid var(--neutral-mid)',
           }}
-          initial={{ opacity: 0, y: 50, scale: 0.95 }}
-          animate={
-            inView
-              ? { opacity: 1, y: 0, scale: 1 }
-              : { opacity: 0, y: 50, scale: 0.95 }
-          }
-          transition={{
-            delay: 0.4,
-            duration: 0.8,
-            type: 'spring',
-            stiffness: 80,
-            damping: 12,
-          }}
+          variants={mapVariants}
+          initial='hidden'
+          animate={inView ? 'visible' : 'hidden'}
         >
           <iframe
             src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3919.1295329980894!2d106.6698503!3d10.8013898!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752928b68fbc3f%3A0xc58bea5686708420!2zVHJ1bmcgVMOibSBI4buZaSBOZ2jhu4sgJiBUaeG7h2MgQ8aw4bubaSBQYXZpbGxvbiBUw6JuIFPGoW4gTmjhuqV0!5e0!3m2!1sen!2s!4v1763866738443!5m2!1sen!2s'

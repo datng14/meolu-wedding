@@ -157,9 +157,6 @@ export default function AdminDashboard() {
                     {t('name')}
                   </th>
                   <th className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>
-                    {t('phone')}
-                  </th>
-                  <th className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>
                     {t('attending')}
                   </th>
                   <th className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>
@@ -220,7 +217,7 @@ export default function AdminDashboard() {
                         </span>
                       </td>
                       <td className='px-6 py-4'>
-                        <div className='text-sm text-gray-500 max-w-xs truncate'>
+                        <div className='text-sm text-gray-500 max-w-xs'>
                           {rsvp.message || '-'}
                         </div>
                       </td>

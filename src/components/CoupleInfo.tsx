@@ -54,6 +54,21 @@ export default function CoupleInfo() {
       y: 0,
     },
   };
+
+  const flowerVariants = {
+    hidden: { opacity: 0, scale: 0.5, rotate: -20 },
+    visible: {
+      opacity: 0.8,
+      scale: 1,
+      rotate: 0,
+      transition: {
+        duration: 1.2,
+        ease: 'easeOut' as const,
+        delay: 1.2, // Appears after all other elements (last element is at 0.9s)
+      },
+    },
+  };
+
   return (
     <section
       ref={ref}
@@ -101,7 +116,12 @@ export default function CoupleInfo() {
       {/* Decorative Flowers */}
 
       {/* Flower 1 - Left corner of bride section (left side) */}
-      <div className='absolute bottom-15 left-0 md:left-[calc(50%-37rem)] w-[160px] lg:w-[180px] h-auto z-0 pointer-events-none opacity-80'>
+      <motion.div
+        className='absolute bottom-15 left-0 md:left-[calc(50%-37rem)] w-[160px] lg:w-[180px] h-auto z-0 pointer-events-none'
+        variants={flowerVariants}
+        initial='hidden'
+        animate={inView ? 'visible' : 'hidden'}
+      >
         <Image
           src='/images/decor-flower1.svg'
           alt=''
@@ -111,10 +131,15 @@ export default function CoupleInfo() {
           quality={100}
           loading='eager'
         />
-      </div>
+      </motion.div>
 
       {/* Flower 2 - Right corner of groom section (right side) */}
-      <div className='absolute top-70 right-0 md:left-[calc(50%+26rem)] w-[120px] md:w-[160px] lg:w-[180px] h-auto z-0 pointer-events-none opacity-80'>
+      <motion.div
+        className='absolute top-70 right-0 md:left-[calc(50%+26rem)] w-[120px] md:w-[160px] lg:w-[180px] h-auto z-0 pointer-events-none'
+        variants={flowerVariants}
+        initial='hidden'
+        animate={inView ? 'visible' : 'hidden'}
+      >
         <Image
           src='/images/decor-flower2.svg'
           alt=''
@@ -124,7 +149,7 @@ export default function CoupleInfo() {
           quality={100}
           loading='eager'
         />
-      </div>
+      </motion.div>
       <div className='relative z-10 max-w-6xl mx-auto md:flex md:items-center md:justify-center md:gap-8 lg:gap-12'>
         {/* Bride Section - Mobile First */}
         <motion.div
