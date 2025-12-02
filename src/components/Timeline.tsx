@@ -56,12 +56,9 @@ export default function Timeline() {
   return (
     <section
       ref={ref}
-      className='py-12 px-4 md:py-20 relative overflow-hidden'
+      className='py-12 px-4 md:py-20 relative overflow-hidden bg-center bg-cover bg-no-repeat'
       style={{
         backgroundImage: 'url(/images/album-7.jpg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
       }}
     >
       {/* Dark overlay for text readability */}
